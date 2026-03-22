@@ -14,13 +14,12 @@
         }
 
         :root {
-            /* Primary brand colors from palette */
-            --primary: #02353C;    /* Deep Pine */
-            --secondary: #2EAF7D;  /* Jade Green */
-            --accent: #3FD0C9;     /* Bright Turquoise */
-            --light: #C1F6ED;      /* Mint Ice */
-            --dark: #02353C;       /* Deep Pine */
-            --success: #449342;    /* Meadow Green */
+            --primary: #02353C;
+            --secondary: #2EAF7D;
+            --accent: #3FD0C9;
+            --light: #C1F6ED;
+            --dark: #02353C;
+            --success: #449342;
             --warning: #f39c12;
             --shadow: 0 4px 12px rgba(2, 53, 60, 0.15);
         }
@@ -37,7 +36,6 @@
             padding: 0 20px;
         }
 
-        /* College Logo */
         .college-logo {
             text-align: center;
             margin-bottom: 30px;
@@ -74,7 +72,6 @@
             width: 100px;
         }
 
-        /* Login & Register Pages */
         .auth-container {
             display: flex;
             flex-direction: column;
@@ -82,8 +79,6 @@
             align-items: center;
             min-height: 100vh;
             background: linear-gradient(rgba(2, 53, 60, 0.8), rgba(2, 53, 60, 0.9));
-            background-size: cover;
-            background-position: center;
             padding: 20px;
         }
 
@@ -177,13 +172,11 @@
             text-decoration: underline;
         }
 
-        /* Main Dashboard Layout */
         .dashboard-container {
             display: flex;
             min-height: 100vh;
         }
 
-        /* Sidebar */
         .sidebar {
             width: 250px;
             background-color: var(--primary);
@@ -231,6 +224,7 @@
             text-decoration: none;
             font-size: 16px;
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         .sidebar-menu a:hover, .sidebar-menu a.active {
@@ -244,7 +238,6 @@
             text-align: center;
         }
 
-        /* Main Content */
         .main-content {
             flex: 1;
             margin-left: 250px;
@@ -252,7 +245,6 @@
             background-color: #f8fefd;
         }
 
-        /* Top Navigation */
         .top-nav {
             display: flex;
             justify-content: space-between;
@@ -324,7 +316,6 @@
             justify-content: center;
         }
 
-        /* Dashboard Content */
         .dashboard-content {
             display: grid;
             grid-template-columns: 2fr 1fr;
@@ -351,7 +342,6 @@
             max-width: 600px;
         }
 
-        /* Announcements */
         .announcements {
             background-color: white;
             border-radius: 12px;
@@ -406,7 +396,6 @@
             line-height: 1.6;
         }
 
-        /* Quick Actions */
         .quick-actions {
             background-color: white;
             border-radius: 12px;
@@ -431,6 +420,7 @@
             text-decoration: none;
             color: var(--primary);
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         .action-btn:hover {
@@ -450,7 +440,6 @@
             text-align: center;
         }
 
-        /* Subject Cards */
         .subjects-section {
             grid-column: 1 / -1;
             background-color: white;
@@ -511,10 +500,8 @@
             margin-top: 15px;
         }
 
-        /* Subject Detail Page */
         .subject-detail-header {
-            background: linear-gradient(rgba(2, 53, 60, 0.85), rgba(2, 53, 60, 0.9)), 
-                        url('https://images.unsplash.com/photo-1456513080510-34499c4369c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80');
+            background: linear-gradient(rgba(2, 53, 60, 0.85), rgba(2, 53, 60, 0.9));
             background-size: cover;
             background-position: center;
             color: white;
@@ -574,7 +561,7 @@
             animation: fadeIn 0.5s ease;
         }
 
-        .lessons-container, .summaries-container, .summary-container {
+        .lessons-container, .summaries-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
@@ -614,7 +601,6 @@
             margin-top: 15px;
         }
 
-        /* Summary Page */
         .summary-container {
             background-color: white;
             border-radius: 12px;
@@ -622,7 +608,6 @@
             box-shadow: var(--shadow);
         }
 
-        /* Offline Learning Page */
         .offline-container {
             background-color: white;
             border-radius: 12px;
@@ -660,7 +645,6 @@
             margin-bottom: 20px;
         }
 
-        /* Quiz Selection Pages */
         .quiz-selection {
             background-color: white;
             border-radius: 12px;
@@ -741,23 +725,6 @@
             border: 1px solid #e74c3c;
         }
 
-        .difficulty-badge:hover, .difficulty-badge.active {
-            color: white;
-        }
-
-        .difficulty-badge.easy:hover, .difficulty-badge.easy.active {
-            background-color: #27ae60;
-        }
-
-        .difficulty-badge.medium:hover, .difficulty-badge.medium.active {
-            background-color: #f39c12;
-        }
-
-        .difficulty-badge.hard:hover, .difficulty-badge.hard.active {
-            background-color: #e74c3c;
-        }
-
-        /* Week Selection Styles */
         .week-selection {
             background: white;
             border-radius: 16px;
@@ -875,17 +842,6 @@
             pointer-events: all;
         }
         
-        .selection-card.selected-difficulty {
-            border: 3px solid var(--secondary);
-            transform: scale(1.02);
-            box-shadow: 0 8px 20px rgba(46, 175, 125, 0.3);
-        }
-        
-        .selection-card.selected-difficulty i {
-            color: var(--secondary);
-        }
-
-        /* Active Quiz Page */
         .quiz-container {
             background-color: white;
             border-radius: 12px;
@@ -990,7 +946,6 @@
             cursor: not-allowed;
         }
 
-        /* Profile Page */
         .profile-container {
             background-color: white;
             border-radius: 12px;
@@ -1059,7 +1014,7 @@
             font-weight: 500;
         }
 
-        .detail-group input, .detail-group textarea {
+        .detail-group input, .detail-group textarea, .detail-group select {
             width: 100%;
             padding: 12px 15px;
             border: 1px solid #ddd;
@@ -1067,9 +1022,142 @@
             font-size: 16px;
         }
 
+        .detail-group input:focus, .detail-group textarea:focus, .detail-group select:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
         .detail-group textarea {
             min-height: 120px;
             resize: vertical;
+        }
+
+        /* Read-only email field style */
+        .readonly-field {
+            background-color: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 12px 15px;
+            font-size: 16px;
+            color: #666;
+            cursor: not-allowed;
+        }
+
+        /* Clickable year level badge */
+        .year-clickable {
+            display: inline-block;
+            width: 100%;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 12px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .year-clickable:hover {
+            background-color: #e8f4fc;
+            border-color: var(--secondary);
+        }
+
+        .year-clickable i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        /* Year Level Popup Modal */
+        .year-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.2s, opacity 0.2s;
+        }
+
+        .year-modal-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .year-popup-modal {
+            background: white;
+            width: 320px;
+            max-width: 90%;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: fadeSlideUp 0.2s ease-out;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .year-popup-header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .year-options-list {
+            padding: 0.5rem 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .year-option-item {
+            padding: 0.9rem 1.8rem;
+            font-size: 1.05rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.1s;
+            border-bottom: 1px solid #edf2f7;
+            color: #1e2f41;
+            text-align: center;
+        }
+
+        .year-option-item:hover {
+            background: #eaf4fc;
+        }
+
+        .year-option-item:active {
+            background: #cde3f0;
+        }
+
+        .year-popup-cancel {
+            padding: 0.8rem;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            color: #6c86a3;
+            font-weight: 500;
+            cursor: pointer;
+            background: #fcfcfd;
+        }
+
+        .year-popup-cancel:hover {
+            background: #f1f5f9;
         }
 
         .save-btn {
@@ -1089,7 +1177,6 @@
             background-color: #248c64;
         }
 
-        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -1127,7 +1214,6 @@
             cursor: pointer;
         }
 
-        /* Quiz Result Modal */
         .quiz-result {
             text-align: center;
         }
@@ -1152,7 +1238,55 @@
             border-radius: 8px;
         }
 
-        /* Responsive */
+        .hidden {
+            display: none !important;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #248c64;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .tag-new {
+            background-color: #e8f4fc;
+            color: var(--secondary);
+        }
+
+        .back-button {
+            margin: 10px;
+            padding: 8px 16px;
+            background: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
         @media (max-width: 1024px) {
             .sidebar {
                 transform: translateX(-100%);
@@ -1197,71 +1331,11 @@
                 grid-template-columns: 1fr;
             }
         }
-
-        /* Utility Classes */
-        .hidden {
-            display: none;
-        }
-
-        .menu-toggle {
-            display: none;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            border-radius: 6px;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .btn-primary {
-            background-color: var(--secondary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #248c64;
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .tag-new {
-            background-color: #e8f4fc;
-            color: var(--secondary);
-        }
-
-        .tag-important {
-            background-color: #fde8e8;
-            color: #e74c3c;
-        }
-
-        .progress-bar {
-            height: 8px;
-            background-color: #e0e0e0;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-top: 10px;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background-color: var(--success);
-            border-radius: 4px;
-        }
     </style>
 </head>
 <body>
     <!-- Login Page -->
     <div id="loginPage" class="auth-container">
-        <!-- College Logo -->
         <div class="college-logo">
             <div class="logo-container">
                 <h1>BESTLINK COLLEGE</h1>
@@ -1287,74 +1361,28 @@
                 <button type="submit" class="auth-btn">Sign In</button>
             </form>
             <div class="auth-footer">
-                <p>Don't have an account? <a href="#" id="showRegister">Create Account</a></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Register Page -->
-    <div id="registerPage" class="auth-container hidden">
-        <!-- College Logo -->
-        <div class="college-logo">
-            <div class="logo-container">
-                <h1>BESTLINK COLLEGE</h1>
-                <h2>OF THE PHILIPPINES</h2>
-                <div class="year">2002</div>
-            </div>
-        </div>
-        
-        <div class="auth-box">
-            <div class="auth-header">
-                <h1><i class="fas fa-user-plus"></i> Create Account</h1>
-                <p>Register to start learning</p>
-            </div>
-            <form id="registerForm" class="auth-form">
-                <div class="form-group">
-                    <label for="registerName">Full Name</label>
-                    <input type="text" id="registerName" placeholder="Enter your full name" required>
-                </div>
-                <div class="form-group">
-                    <label for="registerEmail">Email Address</label>
-                    <input type="email" id="registerEmail" placeholder="Enter your email" required>
-                </div>
-                <div class="form-group">
-                    <label for="registerPassword">Password</label>
-                    <input type="password" id="registerPassword" placeholder="Create a password" required>
-                </div>
-                <div class="form-group">
-                    <label for="registerConfirmPassword">Confirm Password</label>
-                    <input type="password" id="registerConfirmPassword" placeholder="Confirm your password" required>
-                </div>
-                <button type="submit" class="auth-btn">Create Account</button>
-            </form>
-            <div class="auth-footer">
-                <p>Already have an account? <a href="#" id="showLogin">Sign In</a></p>
+                <p>Use any email to login (it will be locked in profile)</p>
             </div>
         </div>
     </div>
 
     <!-- Main Dashboard -->
     <div id="dashboard" class="dashboard-container hidden">
-        <!-- Sidebar - Simplified -->
         <div class="sidebar">
-            <div class="sidebar-header">
-                <div class="dashboard-logo">
-                    <h2>BESTLINK COLLEGE</h2>
-                    <p>Learning System</p>
-                </div>
+            <div class="dashboard-logo">
+                <h2>BESTLINK COLLEGE</h2>
+                <p>Learning System</p>
             </div>
             <ul class="sidebar-menu">
-                <li><a href="#" class="active" data-page="home"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#" data-page="subjects"><i class="fas fa-book"></i> Subjects</a></li>
-                <li><a href="#" data-page="quizSelectSubject"><i class="fas fa-question-circle"></i> Quizzes</a></li>
-                <li><a href="#" data-page="offline"><i class="fas fa-laptop"></i> Offline Learning</a></li>
-                <li><a href="#" data-page="summary"><i class="fas fa-file-alt"></i> Lesson Summaries</a></li>
+                <li><a data-page="home" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a data-page="subjects"><i class="fas fa-book"></i> Subjects</a></li>
+                <li><a data-page="quizSelectSubject"><i class="fas fa-question-circle"></i> Quizzes</a></li>
+                <li><a data-page="offline"><i class="fas fa-laptop"></i> Offline Learning</a></li>
+                <li><a data-page="summary"><i class="fas fa-file-alt"></i> Lesson Summaries</a></li>
             </ul>
         </div>
 
-        <!-- Main Content -->
         <div class="main-content">
-            <!-- Top Navigation -->
             <div class="top-nav">
                 <div class="menu-toggle">
                     <i class="fas fa-bars"></i>
@@ -1376,7 +1404,7 @@
                 </div>
             </div>
 
-            <!-- Dashboard Pages -->
+            <!-- Home Page -->
             <div id="homePage" class="page-content">
                 <div class="welcome-section">
                     <h1>Welcome back, <span id="welcomeUserName">John</span>!</h1>
@@ -1389,9 +1417,7 @@
                             <h2><i class="fas fa-bullhorn"></i> Announcements</h2>
                             <span class="tag tag-new">3 NEW</span>
                         </div>
-                        <ul class="announcement-list" id="announcementList">
-                            <!-- Announcements will be dynamically added here -->
-                        </ul>
+                        <ul class="announcement-list" id="announcementList"></ul>
                     </div>
                     
                     <div class="quick-actions">
@@ -1399,71 +1425,64 @@
                             <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
                         </div>
                         <div class="action-buttons">
-                            <a href="#" class="action-btn" data-page="quizSelectSubject">
+                            <div class="action-btn" data-page="quizSelectSubject">
                                 <i class="fas fa-question-circle"></i>
                                 <span>Take a Quiz</span>
-                            </a>
-                            <a href="#" class="action-btn" data-page="subjects">
+                            </div>
+                            <div class="action-btn" data-page="subjects">
                                 <i class="fas fa-book-open"></i>
                                 <span>View Subjects</span>
-                            </a>
-                            <a href="#" class="action-btn" data-page="offline">
+                            </div>
+                            <div class="action-btn" data-page="offline">
                                 <i class="fas fa-download"></i>
                                 <span>Offline Materials</span>
-                            </a>
-                            <a href="#" class="action-btn" id="profileBtn">
+                            </div>
+                            <div class="action-btn" id="profileBtn">
                                 <i class="fas fa-user"></i>
                                 <span>My Profile</span>
-                            </a>
+                            </div>
                         </div>
                     </div>
                     
                     <div class="subjects-section">
                         <div class="section-header">
                             <h2><i class="fas fa-book"></i> My Subjects</h2>
-                            <a href="#" data-page="subjects" class="btn btn-primary">View All</a>
+                            <div class="btn btn-primary" data-page="subjects">View All</div>
                         </div>
-                        <div class="subject-cards" id="homeSubjectCards">
-                            <!-- Subject cards will be dynamically added here -->
-                        </div>
+                        <div class="subject-cards" id="homeSubjectCards"></div>
                     </div>
                 </div>
             </div>
 
             <!-- Subjects Page -->
             <div id="subjectsPage" class="page-content hidden">
+                <button class="back-button" onclick="showPage('homePage')">← Back</button>
                 <div class="subject-detail-header">
                     <h1>All Subjects</h1>
                     <p>Browse through all available subjects. Click on any subject to view lessons, summaries, and quizzes.</p>
                 </div>
-                
-                <div class="subject-cards" id="allSubjectCards">
-                    <!-- All subject cards will be dynamically added here -->
-                </div>
+                <div class="subject-cards" id="allSubjectCards"></div>
             </div>
 
             <!-- Subject Detail Page -->
-            <div id="subjectDetailPage" class="page-content hidden">
-                <!-- Content will be dynamically generated -->
-            </div>
+            <div id="subjectDetailPage" class="page-content hidden"></div>
 
-            <!-- Quiz: Select Subject Page -->
+            <!-- Quiz Select Subject Page -->
             <div id="quizSelectSubjectPage" class="page-content hidden">
+                <button class="back-button" onclick="showPage('homePage')">← Back</button>
                 <div class="subject-detail-header">
                     <h1>Select Subject for Quiz</h1>
-                    <p>Choose a subject to take a quiz on. After selecting a subject, you can choose the week and difficulty level.</p>
+                    <p>Choose a subject to take a quiz on.</p>
                 </div>
-                
                 <div class="quiz-selection">
                     <h2>Available Subjects</h2>
-                    <div class="selection-grid" id="quizSubjectGrid">
-                        <!-- Quiz subject cards will be dynamically added here -->
-                    </div>
+                    <div class="selection-grid" id="quizSubjectGrid"></div>
                 </div>
             </div>
 
-            <!-- Quiz: Select Week Page -->
+            <!-- Quiz Select Week Page -->
             <div id="quizSelectWeekPage" class="page-content hidden">
+                <button class="back-button" onclick="showPage('quizSelectSubjectPage')">← Back</button>
                 <div class="subject-detail-header" id="quizWeekHeader">
                     <h1>Select Week</h1>
                     <p>Choose which week you want to take a quiz on.</p>
@@ -1484,107 +1503,73 @@
                     
                     <h2><i class="fas fa-calendar-alt"></i> Choose a Week</h2>
                     <p style="color: #7f8c8d; margin-bottom: 15px;">Select the week you want to take a quiz on (Week 1 - Week 17)</p>
-                    
-                    <div class="week-grid" id="weekGrid">
-                        <!-- Week 1-17 will be dynamically generated by JavaScript -->
+                    <div class="week-grid" id="weekGrid"></div>
+                </div>
+
+                <div class="quiz-selection difficulty-section" id="difficultySection" style="margin-top: 40px;">
+                    <h2>Select Difficulty Level</h2>
+                    <p style="margin-bottom: 20px; color: #7f8c8d;">Choose difficulty for Week <span id="difficultyWeekNumber">—</span></p>
+                    <div class="selection-grid">
+                        <div class="selection-card" data-difficulty="easy">
+                            <i class="fas fa-seedling"></i>
+                            <h3>Easy</h3>
+                            <p>Basic concepts</p>
+                            <div class="difficulty-badges">
+                                <span class="difficulty-badge easy">5 Questions</span>
+                            </div>
+                        </div>
+                        <div class="selection-card" data-difficulty="medium">
+                            <i class="fas fa-mountain"></i>
+                            <h3>Medium</h3>
+                            <p>Application level</p>
+                            <div class="difficulty-badges">
+                                <span class="difficulty-badge medium">10 Questions</span>
+                            </div>
+                        </div>
+                        <div class="selection-card" data-difficulty="hard">
+                            <i class="fas fa-fire"></i>
+                            <h3>Hard</h3>
+                            <p>Challenging problems</p>
+                            <div class="difficulty-badges">
+                                <span class="difficulty-badge hard">15 Questions</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Quiz: Select Difficulty Page -->
-           <div id="quizSelectWeekPage" class="page-content hidden">
-    <div class="subject-detail-header" id="quizWeekHeader">
-        <h1>Select Week</h1>
-        <p>Choose which week you want to take a quiz on.</p>
-    </div>
-
-    <div class="week-selection">
-        <div class="selected-week-info" id="selectedWeekInfo">
-            ...
-        </div>
-
-        <h2><i class="fas fa-calendar-alt"></i> Choose a Week</h2>
-        <p style="color: #7f8c8d; margin-bottom: 15px;">Select the week you want to take a quiz on (Week 1 - Week 17)</p>
-
-        <div class="week-grid" id="weekGrid">
-            <!-- weeks generated by JS -->
-        </div>
-    </div>
-
-    <!-- ── MOVED HERE ── -->
-    <div class="quiz-selection difficulty-section" id="difficultySection" style="margin-top: 40px;">
-        <h2>Select Difficulty Level</h2>
-        <p style="margin-bottom: 20px; color: #7f8c8d;">
-            Choose difficulty for Week <span id="difficultyWeekNumber">—</span>
-        </p>
-
-        <div class="selection-grid">
-            <div class="selection-card" data-difficulty="easy">
-                <i class="fas fa-seedling"></i>
-                <h3>Easy</h3>
-                <p>Basic concepts</p>
-                <div class="difficulty-badges">
-                    <span class="difficulty-badge easy">5 Questions</span>
+                
+                <div style="text-align: center; margin: 35px 0 20px;">
+                    <button class="quiz-btn" id="startQuizBtn" style="padding: 15px 50px; font-size: 18px;" disabled>
+                        Start Week <span id="startQuizWeekDisplay">-</span> Quiz
+                    </button>
+                    <p id="startQuizHint" style="margin-top: 12px; color: #7f8c8d; font-size: 14px;">
+                        Select a week to begin
+                    </p>
                 </div>
             </div>
-
-            <div class="selection-card" data-difficulty="medium">
-                <i class="fas fa-mountain"></i>
-                <h3>Medium</h3>
-                <p>Application level</p>
-                <div class="difficulty-badges">
-                    <span class="difficulty-badge medium">10 Questions</span>
-                </div>
-            </div>
-
-            <div class="selection-card" data-difficulty="hard">
-                <i class="fas fa-fire"></i>
-                <h3>Hard</h3>
-                <p>Challenging problems</p>
-                <div class="difficulty-badges">
-                    <span class="difficulty-badge hard">15 Questions</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end moved block -->
-</div>
-                    
-                   <div style="text-align: center; margin: 35px 0 20px;">
-    <button class="quiz-btn" id="startQuizBtn" style="padding: 15px 50px; font-size: 18px;" disabled>
-        Start Week <span id="startQuizWeekDisplay">-</span> Quiz
-    </button>
-    <p id="startQuizHint" style="margin-top: 12px; color: #7f8c8d; font-size: 14px;">
-        Select a week to begin
-    </p>
-</div>  
 
             <!-- Active Quiz Page -->
             <div id="activeQuizPage" class="page-content hidden">
-                <div class="quiz-container">
-                    <!-- Quiz content will be dynamically generated -->
-                </div>
+                <button class="back-button" onclick="showPage('quizSelectWeekPage')">← Back to Week Selection</button>
+                <div class="quiz-container"></div>
             </div>
 
             <!-- Summary Page -->
             <div id="summaryPage" class="page-content hidden">
+                <button class="back-button" onclick="showPage('homePage')">← Back</button>
                 <div class="subject-detail-header">
                     <h1>Lesson Summaries</h1>
                     <p>Browse all lesson summaries from your subjects for quick review.</p>
                 </div>
-                
-                <div class="summary-container" id="summaryContainer">
-                    <!-- Summaries will be dynamically added here -->
-                </div>
+                <div class="summary-container" id="summaryContainer"></div>
             </div>
 
             <!-- Offline Learning Page -->
             <div id="offlinePage" class="page-content hidden">
+                <button class="back-button" onclick="showPage('homePage')">← Back</button>
                 <div class="subject-detail-header">
                     <h1>Offline Learning Materials</h1>
                     <p>Download learning materials for offline study.</p>
                 </div>
-                
                 <div class="offline-container">
                     <div class="offline-materials">
                         <div class="material-card">
@@ -1609,8 +1594,9 @@
                 </div>
             </div>
 
-            <!-- Profile Page -->
+            <!-- Profile Page - UPDATED with clickable year level and locked email -->
             <div id="profilePage" class="page-content hidden">
+                <button class="back-button" onclick="showPage('homePage')">← Back</button>
                 <div class="profile-container">
                     <div class="profile-header">
                         <div class="profile-avatar">
@@ -1621,7 +1607,7 @@
                         </div>
                         <div class="profile-info">
                             <h1 id="profileName">John Doe</h1>
-                            <p><i class="fas fa-envelope"></i> john.doe@bestlink.edu.ph</p>
+                            <p><i class="fas fa-envelope"></i> <span id="profileEmailDisplay">john.doe@bestlink.edu.ph</span></p>
                             <p><i class="fas fa-id-card"></i> Student ID: 2025-0001</p>
                             <p><i class="fas fa-calendar"></i> Joined: August 2025</p>
                         </div>
@@ -1632,16 +1618,24 @@
                             <input type="text" id="profileFullName" value="John Doe">
                         </div>
                         <div class="detail-group">
-                            <label>Email</label>
-                            <input type="email" id="profileEmail" value="john.doe@bestlink.edu.ph">
+                            <label>Email (Locked - from login)</label>
+                            <div class="readonly-field" id="lockedEmailField">john.doe@bestlink.edu.ph</div>
                         </div>
                         <div class="detail-group">
                             <label>Course</label>
-                            <input type="text" id="profileCourse" value="BS Information Technology">
+                            <select id="profileCourse">
+                                <option value="BS Information Technology">BS Information Technology</option>
+                                <option value="BS Computer Science">BS Computer Science</option>
+                                <option value="BS Entertainment and Multimedia Computing">BS Entertainment and Multimedia Computing</option>
+                                <option value="BS Information Systems">BS Information Systems</option>
+                                <option value="BS Cybersecurity">BS Cybersecurity</option>
+                            </select>
                         </div>
                         <div class="detail-group">
-                            <label>Year Level</label>
-                            <input type="text" id="profileYear" value="2nd Year">
+                            <label>Year Level <i class="fas fa-mouse-pointer" style="font-size: 12px; color: var(--secondary);"></i></label>
+                            <div class="year-clickable" id="yearLevelClickable">
+                                <i class="fas fa-graduation-cap"></i> <span id="currentYearLevel">2nd Year</span> <i class="fas fa-chevron-down" style="float: right;"></i>
+                            </div>
                         </div>
                         <div class="detail-group">
                             <label>Bio</label>
@@ -1654,7 +1648,23 @@
         </div>
     </div>
 
-    <!-- Change Avatar Modal -->
+    <!-- Year Level Selection Popup Modal -->
+    <div id="yearLevelModal" class="year-modal-overlay">
+        <div class="year-popup-modal">
+            <div class="year-popup-header">
+                <i class="fas fa-graduation-cap"></i> Select Year Level
+            </div>
+            <div class="year-options-list">
+                <div class="year-option-item" data-year="1st Year">1st Year</div>
+                <div class="year-option-item" data-year="2nd Year">2nd Year</div>
+                <div class="year-option-item" data-year="3rd Year">3rd Year</div>
+                <div class="year-option-item" data-year="4th Year">4th Year</div>
+            </div>
+            <div class="year-popup-cancel" id="closeYearModal">Cancel</div>
+        </div>
+    </div>
+
+    <!-- Modals -->
     <div id="avatarModal" class="modal">
         <div class="modal-content">
             <div class="close-modal">&times;</div>
@@ -1671,46 +1681,38 @@
         </div>
     </div>
 
-        <!-- Quiz Result Modal -->
-<div id="quizResultModal" class="modal">
-    <div class="modal-content quiz-result">
-        <div class="close-modal">×</div>
-        <h2>Quiz Completed!</h2>
-        <div class="result-score" id="quizScore">0/10</div>
-        <h3 id="quizResultTitle">Good Job!</h3>
-        <div class="result-details">
-            <p><strong>Subject:</strong> <span id="resultSubject">N/A</span></p>
-            <p><strong>Week:</strong> <span id="resultWeek">N/A</span></p>
-            <p><strong>Difficulty:</strong> <span id="resultDifficulty">N/A</span></p>
-            <p><strong>Time Taken:</strong> <span id="resultTime">0:00</span></p>
-            <p><strong>Correct Answers:</strong> <span id="resultCorrect">0</span> out of <span id="resultTotal">0</span></p>
-            <p><strong>Percentage:</strong> <span id="resultPercentage">0%</span></p>
-        </div>
-
-        <!-- ADD/REPLACE THIS BUTTON SECTION -->
-        <div style="margin-top: 30px; text-align: center;">
-            <button class="quiz-btn" id="reviewQuizBtn" style="margin-right: 15px; background-color: #3498db;">
-                <i class="fas fa-eye"></i> Review Answers
-            </button>
-            <button class="quiz-btn" id="backToWeekBtn" style="background-color: #7f8c8d;">
-                <i class="fas fa-arrow-left"></i> Back to Week Selection
-            </button>
+    <div id="quizResultModal" class="modal">
+        <div class="modal-content quiz-result">
+            <div class="close-modal">×</div>
+            <h2>Quiz Completed!</h2>
+            <div class="result-score" id="quizScore">0/10</div>
+            <h3 id="quizResultTitle">Good Job!</h3>
+            <div class="result-details">
+                <p><strong>Subject:</strong> <span id="resultSubject">N/A</span></p>
+                <p><strong>Week:</strong> <span id="resultWeek">N/A</span></p>
+                <p><strong>Difficulty:</strong> <span id="resultDifficulty">N/A</span></p>
+                <p><strong>Time Taken:</strong> <span id="resultTime">0:00</span></p>
+                <p><strong>Correct Answers:</strong> <span id="resultCorrect">0</span> out of <span id="resultTotal">0</span></p>
+                <p><strong>Percentage:</strong> <span id="resultPercentage">0%</span></p>
+            </div>
+            <div style="margin-top: 30px; text-align: center;">
+                <button class="quiz-btn" id="reviewQuizBtn" style="margin-right: 15px; background-color: #3498db;">
+                    <i class="fas fa-eye"></i> Review Answers
+                </button>
+                <button class="quiz-btn" id="backToWeekBtn" style="background-color: #7f8c8d;">
+                    <i class="fas fa-arrow-left"></i> Back to Week Selection
+                </button>
+            </div>
         </div>
     </div>
-</div>
-    <!-- MOVE IT HERE – top-level modal, same level as other modals -->
+
     <div id="difficultyModal" class="modal">
         <div class="modal-content" style="max-width: 700px;">
             <div class="close-modal" onclick="closeDifficultyModal()">×</div>
-            <h2 style="text-align:center; color: var(--primary); margin-bottom: 8px;">
-                Choose Difficulty
-            </h2>
-            <p style="text-align:center; color: #666; margin-bottom: 30px;">
-                Week <span id="diffModalWeek">—</span> — Select level
-            </p>
-
+            <h2 style="text-align:center; color: var(--primary); margin-bottom: 8px;">Choose Difficulty</h2>
+            <p style="text-align:center; color: #666; margin-bottom: 30px;">Week <span id="diffModalWeek">—</span> — Select level</p>
             <div class="selection-grid" style="margin: 0;">
-                <div class="selection-card" data-difficulty="easy" onclick="startQuizWithDifficulty('easy')">
+                <div class="selection-card" data-difficulty="easy">
                     <i class="fas fa-seedling"></i>
                     <h3>Easy</h3>
                     <p>Basic concepts</p>
@@ -1718,8 +1720,7 @@
                         <span class="difficulty-badge easy">5 Questions</span>
                     </div>
                 </div>
-
-                <div class="selection-card" data-difficulty="medium" onclick="startQuizWithDifficulty('medium')">
+                <div class="selection-card" data-difficulty="medium">
                     <i class="fas fa-mountain"></i>
                     <h3>Medium</h3>
                     <p>Application level</p>
@@ -1727,13 +1728,12 @@
                         <span class="difficulty-badge medium">10 Questions</span>
                     </div>
                 </div>
-
-                <div class="selection-card" data-difficulty="hard" onclick="startQuizWithDifficulty('hard')">
+                <div class="selection-card" data-difficulty="hard">
                     <i class="fas fa-fire"></i>
                     <h3>Hard</h3>
                     <p>Challenging problems</p>
                     <div class="difficulty-badges">
-                        <span class="difficulty-badge hard">20 Questions</span>
+                        <span class="difficulty-badge hard">15 Questions</span>
                     </div>
                 </div>
             </div>
@@ -1743,12 +1743,8 @@
     <script>
         // ==================== DATA ====================
         
-        // Subjects
-        const SUBJECTS = [
-            "SIA", "GE9", "DM102", "PATHFIT", "NET102", "WEB DEV", "CC105", "ITE"
-        ];
+        const SUBJECTS = ["SIA", "GE9", "DM102", "PATHFIT", "NET102", "WEB DEV", "CC105", "ITE"];
 
-        // Subject background images
         const SUBJECT_BG = {
             "SIA": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=60",
             "GE9": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=60",
@@ -1760,7 +1756,6 @@
             "ITE": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=60"
         };
 
-        // Subject colors
         const SUBJECT_COLORS = {
             "SIA": "#3498db",
             "GE9": "#9b59b6",
@@ -1772,7 +1767,6 @@
             "ITE": "#1abc9c"
         };
 
-        // Lessons and Summaries
         const LESSONS = {
             "SIA": [
                 { title: "Lesson 1: Introduction to Systems", summary: "• What is a system?\n• Components, input-process-output\n• Example: LMS as a system\n\nSummary: Systems are structured parts working together to achieve a goal." },
@@ -1810,49 +1804,68 @@
             ]
         };
 
-        // Announcements
         const ANNOUNCEMENTS = [
             { title: "Update Student Info", date: "Nov 29 - Dec 7, 2025", body: "Please update your student information. Stay ready for announcements." },
             { title: "No Screenshot Policy", date: "Ongoing", body: "No screenshots, no copying, no sharing of modules." },
             { title: "Quiz Week", date: "Next schedule", body: "Prepare for offline quizzes per subject." }
         ];
 
-        // Quizzes
         const QUIZZES = {
             "SIA": [
-                { q: "What does SDLC stand for?", choices: ["System Design Life Cycle", "Software Development Life Cycle", "System Data Level Control", "None"], a: 1, exp: "SDLC = Software Development Life Cycle." },
-                { q: "Which comes first in SDLC?", choices: ["Testing", "Planning", "Maintenance", "Deployment"], a: 1, exp: "Planning is typically the first phase." },
-                { q: "What is a system?", choices: ["Random collection of parts", "Structured parts working together", "Single component", "Software only"], a: 1, exp: "A system is structured parts working together." },
-                { q: "Functional requirements describe:", choices: ["What system should do", "How system should perform", "System speed", "System color"], a: 0, exp: "Functional requirements describe what the system should do." }
+                { q:"What does SDLC stand for?", choices:["System Design Life Cycle","Software Development Life Cycle","System Data Level Control","None"], a:1, exp:"SDLC = Software Development Life Cycle." },
+                { q:"Which comes first in SDLC?", choices:["Testing","Planning","Maintenance","Deployment"], a:1, exp:"Planning is typically the first phase." },
+                { q:"What phase involves coding?", choices:["Analysis","Design","Implementation","Planning"], a:2, exp:"Implementation is where the actual coding happens." },
+                { q:"Which model uses a step-by-step approach?", choices:["Agile","Waterfall","Chaos","Random"], a:1, exp:"Waterfall flows downwards like a waterfall." },
+                { q:"What is the goal of Testing?", choices:["To find bugs","To sell software","To make it look pretty","None"], a:0, exp:"Testing ensures the software works correctly." }
             ],
             "GE9": [
-                { q: "Non-verbal communication includes:", choices: ["Tone of voice", "Emails", "Speeches", "Reports"], a: 0, exp: "Tone, gestures, facial expressions are non-verbal cues." },
-                { q: "Critical thinking focuses on:", choices: ["Guessing", "Evidence", "Rumors", "Memes"], a: 1, exp: "Critical thinking uses evidence and reasoning." }
+                { q:"Non-verbal communication includes:", choices:["Tone of voice","Emails","Speeches","Reports"], a:0, exp:"Tone, gestures, facial expressions are non-verbal cues." },
+                { q:"Critical thinking focuses on:", choices:["Guessing","Evidence","Rumors","Memes"], a:1, exp:"Critical thinking uses evidence and reasoning." },
+                { q:"Active listening requires:", choices:["Ignoring","Eye contact","Sleeping","Talking over"], a:1, exp:"Eye contact shows you are engaged." },
+                { q:"Ethical communication is:", choices:["Lying","Honest","Manipulative","Secretive"], a:1, exp:"Ethics is about being truthful and fair." },
+                { q:"A barrier to communication is:", choices:["Clarity","Noise","Feedback","Understanding"], a:1, exp:"Noise disrupts the message." }
             ],
             "DM102": [
-                { q: "A table consists of:", choices: ["Rows and columns", "Only rows", "Only columns", "Graphs"], a: 0, exp: "Tables are made of rows and columns." },
-                { q: "Primary key is used to:", choices: ["Duplicate records", "Uniquely identify rows", "Store images", "Hide data"], a: 1, exp: "Primary key uniquely identifies a record." }
+                { q:"A table consists of:", choices:["Rows and columns","Only rows","Only columns","Graphs"], a:0, exp:"Tables are made of rows and columns." },
+                { q:"Primary key is used to:", choices:["Duplicate records","Uniquely identify rows","Store images","Hide data"], a:1, exp:"Primary key uniquely identifies a record." },
+                { q:"SQL stands for:", choices:["Simple Query Language","Structured Query Language","System Query List","None"], a:1, exp:"SQL is the standard language for databases." },
+                { q:"Which command adds data?", choices:["DELETE","SELECT","INSERT","DROP"], a:2, exp:"INSERT adds new records to a table." },
+                { q:"A database is a collection of:", choices:["Movies","Organized data","Loose papers","Random files"], a:1, exp:"Databases store information in an organized way." }
             ],
             "PATHFIT": [
-                { q: "Warm-up helps to:", choices: ["Increase injury risk", "Prepare body", "Stop blood flow", "None"], a: 1, exp: "Warm-up prepares muscles and heart rate." },
-                { q: "Hydration is important because:", choices: ["It reduces energy", "It supports body functions", "It causes cramps", "None"], a: 1, exp: "Water supports many body functions." }
+                { q:"Warm-up helps to:", choices:["Increase injury risk","Prepare body","Stop blood flow","None"], a:1, exp:"Warm-up prepares muscles and heart rate." },
+                { q:"Hydration is important because:", choices:["It reduces energy","It supports body functions","It causes cramps","None"], a:1, exp:"Water supports many body functions." },
+                { q:"Target heart rate is for:", choices:["Sleeping","Exercise intensity","Eating","Coding"], a:1, exp:"It helps track how hard you are working out." },
+                { q:"A 'Cool-down' is done:", choices:["Before exercise","After exercise","During sleep","Never"], a:1, exp:"Cool-down helps the body return to rest safely." },
+                { q:"Aerobic exercise includes:", choices:["Lifting 1kg","Running","Sitting","Holding breath"], a:1, exp:"Aerobic exercise uses oxygen (like jogging)." }
             ],
             "NET102": [
-                { q: "LAN stands for:", choices: ["Local Area Network", "Large Area Network", "Low Access Node", "None"], a: 0, exp: "LAN = Local Area Network." },
-                { q: "IPv4 format example:", choices: ["192.168.1.1", "GG:HH:II", "www.site.com", "None"], a: 0, exp: "IPv4 uses dotted decimal numbers." }
+                { q:"LAN stands for:", choices:["Local Area Network","Large Area Network","Low Access Node","None"], a:0, exp:"LAN = Local Area Network." },
+                { q:"IPv4 format example:", choices:["192.168.1.1","GG:HH:II","www.site.com","None"], a:0, exp:"IPv4 uses dotted decimal numbers." },
+                { q:"Which device connects networks?", choices:["Monitor","Router","Mouse","Keyboard"], a:1, exp:"Routers route traffic between networks." },
+                { q:"IP stands for:", choices:["Internal Power","Internet Protocol","Instant Page","None"], a:1, exp:"IP is the address system for the internet." },
+                { q:"A firewall is used for:", choices:["Heating","Security","Speeding up","Cooling"], a:1, exp:"Firewalls block unauthorized access." }
             ],
             "WEB DEV": [
-                { q: "HTML is used for:", choices: ["Structure", "Styling", "Database", "Routing"], a: 0, exp: "HTML defines structure." },
-                { q: "CSS is used for:", choices: ["Structure", "Styling", "Server", "Compile"], a: 1, exp: "CSS defines styles and layout." },
-                { q: "JavaScript is used for:", choices: ["Structure", "Styling", "Interactivity", "Database"], a: 2, exp: "JS adds interactivity and dynamic behavior." }
+                { q:"HTML is used for:", choices:["Structure","Styling","Database","Routing"], a:0, exp:"HTML defines structure." },
+                { q:"CSS is used for:", choices:["Structure","Styling","Server","Compile"], a:1, exp:"CSS defines styles and layout." },
+                { q:"JavaScript makes pages:", choices:["Static","Interactive","Black and white","Slow"], a:1, exp:"JS adds logic and interactivity." },
+                { q:"An <a> tag is for:", choices:["Images","Links","Audio","Arrows"], a:1, exp:"<a> stands for 'anchor', used for links." },
+                { q:"Which tag is for a heading?", choices:["<p>","<h1>","<span>","<br>"], a:1, exp:"<h1> is the largest heading tag." }
             ],
             "CC105": [
-                { q: "OS means:", choices: ["Open Software", "Operating System", "Online Service", "None"], a: 1, exp: "OS = Operating System." },
-                { q: "Phishing is:", choices: ["Fishing sport", "Online scam", "A browser", "A virus always"], a: 1, exp: "Phishing is a social engineering scam." }
+                { q:"OS means:", choices:["Open Software","Operating System","Online Service","None"], a:1, exp:"OS = Operating System." },
+                { q:"Phishing is:", choices:["Fishing sport","Online scam","A browser","A virus always"], a:1, exp:"Phishing is a social engineering scam." },
+                { q:"A virus is a type of:", choices:["Hardware","Malware","Input","Software driver"], a:1, exp:"Malware is malicious software." },
+                { q:"RAM is:", choices:["Permanent","Temporary","A animal","A screen"], a:1, exp:"RAM is volatile (temporary) memory." },
+                { q:"The 'Brain' of the computer:", choices:["Mouse","CPU","RAM","Monitor"], a:1, exp:"CPU handles all instructions." }
             ],
             "ITE": [
-                { q: "IT ethics focuses on:", choices: ["Privacy & responsibility", "Cheating", "Hacking always", "None"], a: 0, exp: "Ethics includes privacy and responsibility." },
-                { q: "Professionalism includes:", choices: ["Respect", "Late work", "Avoid teamwork", "None"], a: 0, exp: "Respect and good attitude are professionalism." }
+                { q:"IT ethics focuses on:", choices:["Privacy & responsibility","Cheating","Hacking always","None"], a:0, exp:"Ethics includes privacy and responsibility." },
+                { q:"Professionalism includes:", choices:["Respect","Late work","Avoid teamwork","None"], a:0, exp:"Respect and good attitude are professionalism." },
+                { q:"Intellectual Property refers to:", choices:["Buying land","Creative works","Old computers","None"], a:1, exp:"IP protects creations of the mind (code, art)." },
+                { q:"A 'Netiquette' is:", choices:["A network tool","Internet etiquette","A fish net","None"], a:1, exp:"Netiquette is the code of polite online behavior." },
+                { q:"Cyberbullying is:", choices:["Funny","Harmful","Legal","Productive"], a:1, exp:"Harassing people online is harmful and often illegal." }
             ]
         };
 
@@ -1873,49 +1886,93 @@
         let currentUser = {
             name: "John Doe",
             email: "john.doe@bestlink.edu.ph",
-            avatar: "https://via.placeholder.com/40"
+            avatar: "https://via.placeholder.com/40",
+            yearLevel: "2nd Year",
+            course: "BS Information Technology"
         };
 
         // ==================== INITIALIZATION ====================
         
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize app
             initApp();
-            const btn = document.getElementById('startQuizBtn');
-    if (btn) {
-        btn.addEventListener('click', openDifficultyModal);
-    }
         });
 
         function initApp() {
-            // Load subjects
             loadSubjects();
             loadQuizSubjects();
             loadHomeSubjects();
-            
-            // Load announcements
             loadAnnouncements();
-            
-            // Load summaries
             loadSummaries();
-            
-            // Generate week grid
             generateWeekGrid();
-            
-            // Setup event listeners
             setupEventListeners();
-            
-            // Setup week selection
             setupWeekSelection();
-            
-            // Setup login/register
             setupAuth();
-            
-            // Setup sidebar navigation
             setupNavigation();
-            
-            // Update user info
+            setupYearLevelPopup();
             updateUserInfo();
+        }
+
+        // ==================== YEAR LEVEL POPUP FUNCTION ====================
+        
+        function setupYearLevelPopup() {
+            const yearClickable = document.getElementById('yearLevelClickable');
+            const yearModal = document.getElementById('yearLevelModal');
+            const closeModal = document.getElementById('closeYearModal');
+            const yearOptions = document.querySelectorAll('.year-option-item');
+            
+            if (yearClickable) {
+                yearClickable.addEventListener('click', function() {
+                    yearModal.classList.add('active');
+                });
+            }
+            
+            if (closeModal) {
+                closeModal.addEventListener('click', function() {
+                    yearModal.classList.remove('active');
+                });
+            }
+            
+            // Close modal when clicking outside
+            yearModal.addEventListener('click', function(e) {
+                if (e.target === yearModal) {
+                    yearModal.classList.remove('active');
+                }
+            });
+            
+            // Handle year selection
+            yearOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const selectedYear = this.dataset.year;
+                    currentUser.yearLevel = selectedYear;
+                    document.getElementById('currentYearLevel').textContent = selectedYear;
+                    yearModal.classList.remove('active');
+                    showToast(`Year level set to ${selectedYear}`, 1500);
+                });
+            });
+        }
+        
+        function showToast(message, duration = 2000) {
+            // Create temporary toast element
+            const toast = document.createElement('div');
+            toast.textContent = message;
+            toast.style.cssText = `
+                position: fixed;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--primary);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 8px;
+                z-index: 2000;
+                font-size: 14px;
+                animation: fadeIn 0.3s ease;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            `;
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.remove();
+            }, duration);
         }
 
         // ==================== SUBJECT FUNCTIONS ====================
@@ -1925,10 +1982,8 @@
             if (!container) return;
             
             container.innerHTML = '';
-            
             SUBJECTS.forEach(subject => {
-                const card = createSubjectCard(subject);
-                container.appendChild(card);
+                container.appendChild(createSubjectCard(subject));
             });
         }
 
@@ -1937,11 +1992,8 @@
             if (!container) return;
             
             container.innerHTML = '';
-            
-            // Show first 4 subjects on home page
             SUBJECTS.slice(0, 4).forEach(subject => {
-                const card = createSubjectCard(subject);
-                container.appendChild(card);
+                container.appendChild(createSubjectCard(subject));
             });
         }
 
@@ -1950,15 +2002,11 @@
             if (!container) return;
             
             container.innerHTML = '';
-            
             SUBJECTS.forEach(subject => {
                 const card = document.createElement('div');
                 card.className = 'selection-card';
                 card.dataset.subject = subject;
-                
-                // Get color for subject
-                const color = SUBJECT_COLORS[subject] || '#2EAF7D'
-                
+                const color = SUBJECT_COLORS[subject] || '#2EAF7D';
                 card.innerHTML = `
                     <i class="fas fa-book" style="color: ${color};"></i>
                     <h3>${subject}</h3>
@@ -1967,11 +2015,7 @@
                         <span class="difficulty-badge easy">${QUIZZES[subject]?.length || 0} questions</span>
                     </div>
                 `;
-                
-                card.addEventListener('click', function() {
-                    selectQuizSubject(subject);
-                });
-                
+                card.addEventListener('click', () => selectQuizSubject(subject));
                 container.appendChild(card);
             });
         }
@@ -1979,9 +2023,8 @@
         function createSubjectCard(subject) {
             const card = document.createElement('div');
             card.className = 'subject-card';
-            
             const bgImage = SUBJECT_BG[subject] || 'https://images.unsplash.com/photo-1456513080510-34499c4369c6';
-            const color = SUBJECT_COLORS[subject] || '#2EAF7D'
+            const color = SUBJECT_COLORS[subject] || '#2EAF7D';
             
             card.innerHTML = `
                 <div class="subject-header" style="background: linear-gradient(135deg, ${color}dd, ${color});">
@@ -1996,11 +2039,7 @@
                     </div>
                 </div>
             `;
-            
-            card.addEventListener('click', function() {
-                openSubjectDetail(subject);
-            });
-            
+            card.addEventListener('click', () => openSubjectDetail(subject));
             return card;
         }
 
@@ -2018,37 +2057,31 @@
             return descriptions[subject] || "Course subject";
         }
 
-        // ==================== SUBJECT DETAIL ====================
-        
         function openSubjectDetail(subject) {
             const page = document.getElementById('subjectDetailPage');
             if (!page) return;
             
-            // Create subject detail content
             page.innerHTML = `
+                <button class="back-button" onclick="showPage('subjectsPage')">← Back to Subjects</button>
                 <div class="subject-detail-header" style="background: linear-gradient(rgba(2, 53, 60, 0.85), rgba(2, 53, 60, 0.9)), url('${SUBJECT_BG[subject]}');">
                     <h1>${subject}</h1>
                     <p>${getSubjectDescription(subject)}</p>
                 </div>
-                
                 <div class="subject-tabs">
                     <button class="tab-btn active" data-tab="lessons">Lessons</button>
                     <button class="tab-btn" data-tab="summaries">Summaries</button>
                     <button class="tab-btn" data-tab="quizzes">Quizzes</button>
                 </div>
-                
                 <div id="lessonsTab" class="tab-content active">
                     <div class="lessons-container">
                         ${generateLessonsHTML(subject)}
                     </div>
                 </div>
-                
                 <div id="summariesTab" class="tab-content">
                     <div class="summaries-container">
                         ${generateSummariesHTML(subject)}
                     </div>
                 </div>
-                
                 <div id="quizzesTab" class="tab-content">
                     <div class="quiz-selection">
                         <h2>Take a Quiz</h2>
@@ -2062,10 +2095,7 @@
                 </div>
             `;
             
-            // Setup tab switching
             setupTabs();
-            
-            // Show page
             showPage('subjectDetailPage');
         }
 
@@ -2100,14 +2130,10 @@
             const tabBtns = document.querySelectorAll('.tab-btn');
             tabBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
-                    // Remove active class from all tabs
                     tabBtns.forEach(b => b.classList.remove('active'));
                     document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-                    
-                    // Add active class to clicked tab
                     this.classList.add('active');
-                    const tabId = this.dataset.tab + 'Tab';
-                    document.getElementById(tabId).classList.add('active');
+                    document.getElementById(this.dataset.tab + 'Tab').classList.add('active');
                 });
             });
         }
@@ -2121,32 +2147,28 @@
                 questions: QUIZZES[subject] || []
             };
             
-            // Update headers
             const weekHeader = document.getElementById('quizWeekHeader');
             if (weekHeader) {
                 weekHeader.innerHTML = `
                     <h1>${subject} - Select Week</h1>
-                    <p>Choose which week you want to take a quiz on. Each week has different topics and difficulty levels.</p>
+                    <p>Choose which week you want to take a quiz on.</p>
                 `;
             }
             
-            const difficultyHeader = document.getElementById('quizDifficultyHeader');
-            if (difficultyHeader) {
-                difficultyHeader.innerHTML = `
-                    <h1>${subject} - Select Difficulty</h1>
-                    <p>Choose the difficulty level for your quiz.</p>
-                `;
-            }
-            
-            // Reset week selection
             quizState.selectedWeek = null;
             quizState.selectedDifficulty = null;
-            document.getElementById('selectedWeekInfo').classList.remove('active');
-            document.getElementById('startQuizBtn').disabled = true;
-            document.getElementById('startQuizHint').textContent = 'Please select a week first';
-            document.getElementById('difficultySection').classList.remove('active');
+            const weekInfo = document.getElementById('selectedWeekInfo');
+            if (weekInfo) weekInfo.classList.remove('active');
             
-            // Show week selection page
+            const startBtn = document.getElementById('startQuizBtn');
+            if (startBtn) startBtn.disabled = true;
+            
+            const hint = document.getElementById('startQuizHint');
+            if (hint) hint.textContent = 'Select a week to begin';
+            
+            const diffSection = document.getElementById('difficultySection');
+            if (diffSection) diffSection.classList.remove('active');
+            
             showPage('quizSelectWeekPage');
         }
 
@@ -2155,35 +2177,17 @@
             if (!weekGrid) return;
             
             weekGrid.innerHTML = '';
-            
             for (let i = 1; i <= 17; i++) {
                 const weekCard = document.createElement('div');
                 weekCard.className = 'week-card';
                 weekCard.dataset.week = i;
-                
                 let icon = 'fa-calendar-alt';
                 let label = '';
-                
-                if (i <= 5) {
-                    icon = 'fa-seedling';
-                    label = 'Fundamentals';
-                } else if (i <= 10) {
-                    icon = 'fa-mountain';
-                    label = 'Core Concepts';
-                } else if (i <= 15) {
-                    icon = 'fa-fire';
-                    label = 'Advanced';
-                } else {
-                    icon = 'fa-trophy';
-                    label = 'Final Topics';
-                }
-                
-                weekCard.innerHTML = `
-                    <i class="fas ${icon}"></i>
-                    <span class="week-number">Week ${i}</span>
-                    <span class="week-label">${label}</span>
-                `;
-                
+                if (i <= 5) { icon = 'fa-seedling'; label = 'Fundamentals'; }
+                else if (i <= 10) { icon = 'fa-mountain'; label = 'Core Concepts'; }
+                else if (i <= 15) { icon = 'fa-fire'; label = 'Advanced'; }
+                else { icon = 'fa-trophy'; label = 'Final Topics'; }
+                weekCard.innerHTML = `<i class="fas ${icon}"></i><span class="week-number">Week ${i}</span><span class="week-label">${label}</span>`;
                 weekGrid.appendChild(weekCard);
             }
         }
@@ -2196,91 +2200,74 @@
                 const weekCard = e.target.closest('.week-card');
                 if (!weekCard) return;
                 
-                // Remove selected class from all week cards
-                document.querySelectorAll('.week-card').forEach(card => {
-                    card.classList.remove('selected');
-                });
-                
-                // Add selected class to clicked card
+                document.querySelectorAll('.week-card').forEach(card => card.classList.remove('selected'));
                 weekCard.classList.add('selected');
                 
-                // Update quiz state
                 const weekNumber = weekCard.dataset.week;
                 quizState.selectedWeek = weekNumber;
                 
-                // Show selected week info
                 document.getElementById('selectedWeekDisplay').textContent = `Week ${weekNumber}`;
                 document.getElementById('selectedWeekNumber').textContent = weekNumber;
+                document.getElementById('startQuizWeekDisplay').textContent = weekNumber;
                 
-                // Update progress bar
                 const progressPercentage = (weekNumber / 17) * 100;
                 document.getElementById('weekProgressFill').style.width = `${progressPercentage}%`;
                 document.querySelector('.week-progress span:last-child').textContent = `${weekNumber}/17 weeks`;
-                
                 document.getElementById('selectedWeekInfo').classList.add('active');
-                
-                // Update difficulty section
                 document.getElementById('difficultyWeekNumber').textContent = weekNumber;
-                document.querySelectorAll('.difficulty-week-ref').forEach(el => {
-                    el.textContent = weekNumber;
-                });
                 
-                // Update quiz button
                 const startBtn = document.getElementById('startQuizBtn');
                 startBtn.textContent = `Start Week ${weekNumber} Quiz`;
                 startBtn.disabled = false;
-                document.getElementById('startQuizHint').textContent = 'Click Start Quiz to begin';
-                
-                // Activate difficulty section
+                document.getElementById('startQuizHint').textContent = 'Select difficulty level to begin';
                 document.getElementById('difficultySection').classList.add('active');
             });
         }
 
-        function startQuiz() {
+        function openDifficultyModal() {
             if (!quizState.selectedWeek) {
-                alert('Please select a week first');
+                alert("Please select a week first.");
+                return;
+            }
+            document.getElementById('diffModalWeek').textContent = quizState.selectedWeek;
+            document.getElementById('difficultyModal').style.display = 'flex';
+        }
+
+        function closeDifficultyModal() {
+            document.getElementById('difficultyModal').style.display = 'none';
+        }
+
+        function startQuizWithDifficulty(difficulty) {
+            quizState.selectedDifficulty = difficulty;
+            closeDifficultyModal();
+            startQuiz();
+        }
+
+        function startQuiz() {
+            if (!quizState.selectedWeek || !quizState.selectedDifficulty) {
+                alert('Please select week and difficulty');
                 return;
             }
             
-            if (!quizState.selectedDifficulty) {
-                alert('Please select a difficulty level');
-                return;
-            }
-            
-            // Get questions for selected subject
             const subjectQuestions = QUIZZES[quizState.selectedSubject.id] || [];
+            let numQuestions = 5;
+            if (quizState.selectedDifficulty === 'medium') numQuestions = 10;
+            if (quizState.selectedDifficulty === 'hard') numQuestions = 15;
             
-            // Determine number of questions based on difficulty
-            let numQuestions = 10;
-            if (quizState.selectedDifficulty === 'medium') numQuestions = 15;
-            if (quizState.selectedDifficulty === 'hard') numQuestions = 20;
-            
-            // Prepare quiz questions (take first N questions or repeat if not enough)
-            let questions = [];
-            if (subjectQuestions.length >= numQuestions) {
-                questions = subjectQuestions.slice(0, numQuestions);
-            } else {
-                // Repeat questions if not enough
-                while (questions.length < numQuestions) {
-                    questions = questions.concat(subjectQuestions);
-                }
-                questions = questions.slice(0, numQuestions);
+            let questions = subjectQuestions.slice(0, numQuestions);
+            while (questions.length < numQuestions) {
+                questions = questions.concat(subjectQuestions);
             }
+            questions = questions.slice(0, numQuestions);
             
-            // Set quiz state
             quizState.currentQuestions = questions;
             quizState.currentQuestionIndex = 0;
             quizState.userAnswers = new Array(questions.length).fill(null);
-            quizState.timeLeft = numQuestions * 60; // 1 minute per question
+            quizState.timeLeft = numQuestions * 60;
             quizState.quizStartTime = Date.now();
             
-            // Show quiz page
             showPage('activeQuizPage');
-            
-            // Load first question
             loadQuizQuestion();
-            
-            // Start timer
             startQuizTimer();
         }
 
@@ -2291,82 +2278,47 @@
             const question = quizState.currentQuestions[quizState.currentQuestionIndex];
             const currentNum = quizState.currentQuestionIndex + 1;
             const totalNum = quizState.currentQuestions.length;
-            
-            // Calculate progress percentage
             const progressPercentage = (currentNum / totalNum) * 100;
             
             quizContainer.innerHTML = `
                 <div class="quiz-header">
-                    <h2>${quizState.selectedSubject.name} - Week ${quizState.selectedWeek}</h2>
-                    <div class="quiz-timer" id="quizTimer">
-                        <i class="fas fa-clock"></i> <span id="timerDisplay">${formatTime(quizState.timeLeft)}</span>
-                    </div>
+                    <h2>${quizState.selectedSubject.name} - Week ${quizState.selectedWeek} (${quizState.selectedDifficulty})</h2>
+                    <div class="quiz-timer"><i class="fas fa-clock"></i> <span id="timerDisplay">${formatTime(quizState.timeLeft)}</span></div>
                 </div>
-                
                 <div class="quiz-progress">
                     <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
                         <span>Question ${currentNum} of ${totalNum}</span>
                         <span>${Math.round(progressPercentage)}% Complete</span>
                     </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: ${progressPercentage}%;"></div>
-                    </div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: ${progressPercentage}%;"></div></div>
                 </div>
-                
-                <div class="quiz-question">
-                    ${question.q}
-                </div>
-                
+                <div class="quiz-question">${question.q}</div>
                 <div class="quiz-options" id="quizOptions">
                     ${question.choices.map((choice, index) => `
-                        <div class="quiz-option ${quizState.userAnswers[quizState.currentQuestionIndex] === index ? 'selected' : ''}" 
-                             data-option-index="${index}">
+                        <div class="quiz-option ${quizState.userAnswers[quizState.currentQuestionIndex] === index ? 'selected' : ''}" data-option-index="${index}">
                             ${String.fromCharCode(65 + index)}. ${choice}
                         </div>
                     `).join('')}
                 </div>
-                
                 <div class="quiz-navigation">
-                    <button class="quiz-btn" id="prevQuestionBtn" ${quizState.currentQuestionIndex === 0 ? 'disabled' : ''}>
-                        <i class="fas fa-arrow-left"></i> Previous
-                    </button>
-                    <button class="quiz-btn" id="nextQuestionBtn">
-                        ${quizState.currentQuestionIndex === totalNum - 1 ? 'Submit Quiz' : 'Next <i class="fas fa-arrow-right"></i>'}
-                    </button>
+                    <button class="quiz-btn" id="prevQuestionBtn" ${quizState.currentQuestionIndex === 0 ? 'disabled' : ''}><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="quiz-btn" id="nextQuestionBtn">${quizState.currentQuestionIndex === totalNum - 1 ? 'Submit Quiz' : 'Next <i class="fas fa-arrow-right"></i>'}</button>
                 </div>
             `;
             
-            // Add event listeners for options
             setupQuizOptions();
             
-            const prevBtn = document.getElementById('prevQuestionBtn');
-const nextBtn = document.getElementById('nextQuestionBtn');
-
-if (prevBtn) {
-    const newPrev = prevBtn.cloneNode(true);
-    prevBtn.parentNode.replaceChild(newPrev, prevBtn);
-    newPrev.addEventListener('click', prevQuestion);
-}
-
-if (nextBtn) {
-    const newNext = nextBtn.cloneNode(true);
-    nextBtn.parentNode.replaceChild(newNext, nextBtn);
-    newNext.addEventListener('click', nextQuestion);
-}
+            document.getElementById('prevQuestionBtn')?.addEventListener('click', prevQuestion);
+            document.getElementById('nextQuestionBtn')?.addEventListener('click', nextQuestion);
         }
+
         function setupQuizOptions() {
             const options = document.querySelectorAll('.quiz-option');
             options.forEach(option => {
                 option.addEventListener('click', function() {
-                    // Remove selected class from all options
                     options.forEach(opt => opt.classList.remove('selected'));
-                    
-                    // Add selected class to clicked option
                     this.classList.add('selected');
-                    
-                    // Save answer
-                    const optionIndex = parseInt(this.dataset.optionIndex);
-                    quizState.userAnswers[quizState.currentQuestionIndex] = optionIndex;
+                    quizState.userAnswers[quizState.currentQuestionIndex] = parseInt(this.dataset.optionIndex);
                 });
             });
         }
@@ -2378,80 +2330,55 @@ if (nextBtn) {
             }
         }
 
-       function nextQuestion() {
-    console.log("Next/Submit button clicked! Current question:", quizState.currentQuestionIndex + 1);
-
-    if (quizState.userAnswers[quizState.currentQuestionIndex] === null) {
-        alert('Please select an answer');
-        return;
-    }
-    
-    if (quizState.currentQuestionIndex === quizState.currentQuestions.length - 1) {
-        console.log("LAST QUESTION → Calling submitQuiz()");
-        submitQuiz();
-    } else {
-        console.log("Going to next question...");
-        quizState.currentQuestionIndex++;
-        loadQuizQuestion();
-    }
-}
-
-function submitQuiz() {
-    console.log("submitQuiz() is running now!");
-
-    let correctCount = 0;
-    quizState.currentQuestions.forEach((question, index) => {
-        if (quizState.userAnswers[index] === question.a) {
-            correctCount++;
+        function nextQuestion() {
+            if (quizState.userAnswers[quizState.currentQuestionIndex] === null) {
+                alert('Please select an answer');
+                return;
+            }
+            
+            if (quizState.currentQuestionIndex === quizState.currentQuestions.length - 1) {
+                submitQuiz();
+            } else {
+                quizState.currentQuestionIndex++;
+                loadQuizQuestion();
+            }
         }
-    });
 
-    const totalQuestions = quizState.currentQuestions.length;
-    const percentage = Math.round((correctCount / totalQuestions) * 100);
+        function submitQuiz() {
+            let correctCount = 0;
+            quizState.currentQuestions.forEach((question, index) => {
+                if (quizState.userAnswers[index] === question.a) correctCount++;
+            });
 
-    // Fill in the results
-    document.getElementById('resultSubject').textContent = quizState.selectedSubject.name;
-    document.getElementById('resultWeek').textContent = `Week ${quizState.selectedWeek}`;
-    document.getElementById('resultDifficulty').textContent = 
-        quizState.selectedDifficulty.charAt(0).toUpperCase() + quizState.selectedDifficulty.slice(1);
-    document.getElementById('resultTime').textContent = formatTime(quizState.timeLeft);
-    document.getElementById('resultCorrect').textContent = correctCount;
-    document.getElementById('resultTotal').textContent = totalQuestions;
-    document.getElementById('resultPercentage').textContent = `${percentage}%`;
-    document.getElementById('quizScore').textContent = `${correctCount}/${totalQuestions}`;
+            const totalQuestions = quizState.currentQuestions.length;
+            const percentage = Math.round((correctCount / totalQuestions) * 100);
 
-    // Choose title based on score
-    let title = '';
-    if (percentage >= 90) title = 'Excellent!';
-    else if (percentage >= 70) title = 'Good Job!';
-    else if (percentage >= 50) title = 'Fair Effort!';
-    else title = 'Keep Practicing!';
-    document.getElementById('quizResultTitle').textContent = title;
+            document.getElementById('resultSubject').textContent = quizState.selectedSubject.name;
+            document.getElementById('resultWeek').textContent = `Week ${quizState.selectedWeek}`;
+            document.getElementById('resultDifficulty').textContent = quizState.selectedDifficulty.charAt(0).toUpperCase() + quizState.selectedDifficulty.slice(1);
+            document.getElementById('resultTime').textContent = formatTime(quizState.timeLeft);
+            document.getElementById('resultCorrect').textContent = correctCount;
+            document.getElementById('resultTotal').textContent = totalQuestions;
+            document.getElementById('resultPercentage').textContent = `${percentage}%`;
+            document.getElementById('quizScore').textContent = `${correctCount}/${totalQuestions}`;
 
-    // Force show the popup
-    const modal = document.getElementById('quizResultModal');
-    if (modal) {
-        modal.style.display = 'flex';
-        modal.style.zIndex = '9999';
-        console.log("Result popup should now be visible!");
-    } else {
-        alert("Error: Result popup not found!");
-    }
+            let title = '';
+            if (percentage >= 90) title = 'Excellent!';
+            else if (percentage >= 70) title = 'Good Job!';
+            else if (percentage >= 50) title = 'Fair Effort!';
+            else title = 'Keep Practicing!';
+            document.getElementById('quizResultTitle').textContent = title;
 
-    // Stop timer
-    clearInterval(quizState.timer);
-}
+            document.getElementById('quizResultModal').style.display = 'flex';
+            clearInterval(quizState.timer);
+        }
+
         function startQuizTimer() {
             if (quizState.timer) clearInterval(quizState.timer);
-            
             quizState.timer = setInterval(() => {
                 quizState.timeLeft--;
-                
                 const timerDisplay = document.getElementById('timerDisplay');
-                if (timerDisplay) {
-                    timerDisplay.textContent = formatTime(quizState.timeLeft);
-                }
-                
+                if (timerDisplay) timerDisplay.textContent = formatTime(quizState.timeLeft);
                 if (quizState.timeLeft <= 0) {
                     clearInterval(quizState.timer);
                     alert('Time\'s up! Submitting your quiz...');
@@ -2467,15 +2394,12 @@ function submitQuiz() {
             if (!container) return;
             
             container.innerHTML = '<h2>All Lesson Summaries</h2>';
-            
             SUBJECTS.forEach(subject => {
                 const subjectSummaries = document.createElement('div');
                 subjectSummaries.style.marginTop = '30px';
                 subjectSummaries.innerHTML = `<h3 style="color: var(--primary); margin-bottom: 15px;">${subject} - ${getSubjectDescription(subject)}</h3>`;
-                
                 const summariesGrid = document.createElement('div');
                 summariesGrid.className = 'summaries-container';
-                
                 const lessons = LESSONS[subject] || [];
                 lessons.forEach(lesson => {
                     const card = document.createElement('div');
@@ -2483,13 +2407,10 @@ function submitQuiz() {
                     card.innerHTML = `
                         <h3>${lesson.title}</h3>
                         <p>${lesson.summary.replace(/\n/g, '<br>')}</p>
-                        <div class="summary-meta">
-                            <span><i class="fas fa-bookmark"></i> ${subject}</span>
-                        </div>
+                        <div class="summary-meta"><span><i class="fas fa-bookmark"></i> ${subject}</span></div>
                     `;
                     summariesGrid.appendChild(card);
                 });
-                
                 subjectSummaries.appendChild(summariesGrid);
                 container.appendChild(subjectSummaries);
             });
@@ -2500,21 +2421,14 @@ function submitQuiz() {
         function loadAnnouncements() {
             const container = document.getElementById('announcementList');
             if (!container) return;
-            
             container.innerHTML = '';
-            
             ANNOUNCEMENTS.forEach(announcement => {
                 const li = document.createElement('li');
                 li.className = 'announcement-item';
                 li.innerHTML = `
                     <div class="announcement-title">${announcement.title}</div>
-                    <div class="announcement-meta">
-                        <span><i class="far fa-calendar"></i> ${announcement.date}</span>
-                        <span><i class="fas fa-user"></i> Admin</span>
-                    </div>
-                    <div class="announcement-content">
-                        ${announcement.body}
-                    </div>
+                    <div class="announcement-meta"><span><i class="far fa-calendar"></i> ${announcement.date}</span><span><i class="fas fa-user"></i> Admin</span></div>
+                    <div class="announcement-content">${announcement.body}</div>
                 `;
                 container.appendChild(li);
             });
@@ -2530,163 +2444,108 @@ function submitQuiz() {
 
         function updateUserInfo() {
             const userNameElements = document.querySelectorAll('#currentUserName, #welcomeUserName, #profileName');
-            userNameElements.forEach(el => {
-                if (el) el.textContent = currentUser.name;
-            });
-            
+            userNameElements.forEach(el => { if (el) el.textContent = currentUser.name; });
             const avatarElements = document.querySelectorAll('#userAvatar, #profileAvatar');
-            avatarElements.forEach(el => {
-                if (el) el.src = currentUser.avatar;
-            });
+            avatarElements.forEach(el => { if (el) el.src = currentUser.avatar; });
+            
+            // Update profile email display (locked)
+            const profileEmailDisplay = document.getElementById('profileEmailDisplay');
+            const lockedEmailField = document.getElementById('lockedEmailField');
+            if (profileEmailDisplay) profileEmailDisplay.textContent = currentUser.email;
+            if (lockedEmailField) lockedEmailField.textContent = currentUser.email;
+            
+            // Update year level display
+            const currentYearLevelSpan = document.getElementById('currentYearLevel');
+            if (currentYearLevelSpan) currentYearLevelSpan.textContent = currentUser.yearLevel;
+            
+            // Update course select
+            const courseSelect = document.getElementById('profileCourse');
+            if (courseSelect) courseSelect.value = currentUser.course;
+            
+            // Update full name input
+            const fullNameInput = document.getElementById('profileFullName');
+            if (fullNameInput) fullNameInput.value = currentUser.name;
         }
 
         // ==================== PAGE NAVIGATION ====================
         
         function setupNavigation() {
-            const menuLinks = document.querySelectorAll('.sidebar-menu a, .action-btn[data-page]');
+            const menuLinks = document.querySelectorAll('.sidebar-menu a, .action-btn[data-page], .btn-primary[data-page]');
             menuLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const page = this.dataset.page;
                     if (page) {
                         showPage(page + 'Page');
-                        
-                        // Update active state in sidebar
-                        document.querySelectorAll('.sidebar-menu a').forEach(a => {
-                            a.classList.remove('active');
-                        });
+                        document.querySelectorAll('.sidebar-menu a').forEach(a => a.classList.remove('active'));
                         const activeLink = document.querySelector(`.sidebar-menu a[data-page="${page}"]`);
                         if (activeLink) activeLink.classList.add('active');
                     }
                 });
             });
             
-            // Profile button
-            document.getElementById('profileBtn')?.addEventListener('click', function(e) {
-                e.preventDefault();
-                showPage('profilePage');
-            });
-            
-            // User profile button
-            document.getElementById('userProfileBtn')?.addEventListener('click', function() {
-                showPage('profilePage');
-            });
-            
-            // Menu toggle for mobile
-            document.querySelector('.menu-toggle')?.addEventListener('click', function() {
-                document.querySelector('.sidebar').classList.toggle('active');
-            });
+            document.getElementById('profileBtn')?.addEventListener('click', () => showPage('profilePage'));
+            document.getElementById('userProfileBtn')?.addEventListener('click', () => showPage('profilePage'));
+            document.querySelector('.menu-toggle')?.addEventListener('click', () => document.querySelector('.sidebar').classList.toggle('active'));
         }
 
         function showPage(pageId) {
-            // Hide all pages
-            document.querySelectorAll('.page-content').forEach(page => {
-                page.classList.add('hidden');
-            });
-            
-            // Show selected page
+            document.querySelectorAll('.page-content').forEach(page => page.classList.add('hidden'));
             const page = document.getElementById(pageId);
-            if (page) {
-                page.classList.remove('hidden');
-            }
-            
-            // Special handling for certain pages
-            if (pageId === 'summaryPage') {
-                loadSummaries();
-            }
+            if (page) page.classList.remove('hidden');
+            if (pageId === 'summaryPage') loadSummaries();
         }
 
         // ==================== AUTH FUNCTIONS ====================
         
         function setupAuth() {
-            // Show register
-            document.getElementById('showRegister')?.addEventListener('click', function(e) {
+            document.getElementById('loginForm')?.addEventListener('submit', (e) => {
                 e.preventDefault();
-                document.getElementById('loginPage').classList.add('hidden');
-                document.getElementById('registerPage').classList.remove('hidden');
-            });
-            
-            // Show login
-            document.getElementById('showLogin')?.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.getElementById('registerPage').classList.add('hidden');
-                document.getElementById('loginPage').classList.remove('hidden');
-            });
-            
-            // Login form
-            document.getElementById('loginForm')?.addEventListener('submit', function(e) {
-                e.preventDefault();
-                // Simple login - just go to dashboard
+                const loginEmail = document.getElementById('loginEmail').value;
+                if (loginEmail) {
+                    // Set the email from login - this becomes LOCKED and cannot be changed
+                    currentUser.email = loginEmail;
+                    currentUser.name = loginEmail.split('@')[0] || "Student";
+                    currentUser.name = currentUser.name.charAt(0).toUpperCase() + currentUser.name.slice(1);
+                }
+                updateUserInfo();
                 document.getElementById('loginPage').classList.add('hidden');
                 document.getElementById('dashboard').classList.remove('hidden');
-            });
-            
-            // Register form
-            document.getElementById('registerForm')?.addEventListener('submit', function(e) {
-                e.preventDefault();
-                // Simple register - just go to dashboard
-                document.getElementById('registerPage').classList.add('hidden');
-                document.getElementById('dashboard').classList.remove('hidden');
+                showToast(`Welcome ${currentUser.name}! Your email is now locked.`, 3000);
             });
         }
 
         // ==================== EVENT LISTENERS ====================
         
-       function setupEventListeners() {
-    // Start Week X Quiz button → opens difficulty modal
-    const startQuizBtn = document.getElementById('startQuizBtn');
-    if (startQuizBtn) {
-        startQuizBtn.addEventListener('click', function() {
-            openDifficultyModal();
-        });
-    }
-
-    // ── You can move other important listeners here later if you want ──
-    // For example:
-    document.getElementById('newQuizBtn')?.addEventListener('click', function() {
-        document.getElementById('quizResultModal').style.display = 'none';
-        showPage('quizSelectSubjectPage');
-    });
-
-    document.getElementById('reviewQuizBtn')?.addEventListener('click', function() {
-        document.getElementById('quizResultModal').style.display = 'none';
-        quizState.currentQuestionIndex = 0;
-        showPage('activeQuizPage');
-        loadQuizQuestion();
-    });
-
-    // Close all modals when clicking ×
-    document.querySelectorAll('.close-modal').forEach(btn => {
-        btn.addEventListener('click', function() {
-            this.closest('.modal').style.display = 'none';
-        });
-    });
-
-    // ... you can slowly move other scattered listeners here over time ...
-
-            // Avatar edit button
-            document.getElementById('editAvatarBtn')?.addEventListener('click', function() {
-                document.getElementById('avatarModal').style.display = 'flex';
+        function setupEventListeners() {
+            document.getElementById('startQuizBtn')?.addEventListener('click', openDifficultyModal);
+            
+            document.getElementById('reviewQuizBtn')?.addEventListener('click', function() {
+                document.getElementById('quizResultModal').style.display = 'none';
+                quizState.currentQuestionIndex = 0;
+                showPage('activeQuizPage');
+                loadQuizQuestion();
             });
             
-            // Upload avatar button
-            document.getElementById('uploadAvatarBtn')?.addEventListener('click', function() {
-                document.getElementById('avatarUpload').click();
+            document.getElementById('backToWeekBtn')?.addEventListener('click', function() {
+                document.getElementById('quizResultModal').style.display = 'none';
+                quizState.currentQuestions = [];
+                showPage('quizSelectWeekPage');
             });
             
-            // Avatar file input
+            document.querySelectorAll('.close-modal').forEach(btn => {
+                btn.addEventListener('click', function() { this.closest('.modal').style.display = 'none'; });
+            });
+            
+            document.getElementById('editAvatarBtn')?.addEventListener('click', () => document.getElementById('avatarModal').style.display = 'flex');
+            document.getElementById('uploadAvatarBtn')?.addEventListener('click', () => document.getElementById('avatarUpload').click());
             document.getElementById('avatarUpload')?.addEventListener('change', function(e) {
                 if (this.files && this.files[0]) {
                     const reader = new FileReader();
-                    reader.onload = function(e) {
-                        document.getElementById('avatarPreview').innerHTML = 
-                            `<img src="${e.target.result}" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">`;
-                    };
+                    reader.onload = (e) => document.getElementById('avatarPreview').innerHTML = `<img src="${e.target.result}" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">`;
                     reader.readAsDataURL(this.files[0]);
                 }
             });
-            
-            // Save avatar button
             document.getElementById('saveAvatarBtn')?.addEventListener('click', function() {
                 const preview = document.querySelector('#avatarPreview img');
                 if (preview) {
@@ -2696,77 +2555,21 @@ function submitQuiz() {
                 document.getElementById('avatarModal').style.display = 'none';
             });
             
-            // Save profile button
             document.getElementById('saveProfileBtn')?.addEventListener('click', function() {
                 currentUser.name = document.getElementById('profileFullName').value;
+                currentUser.course = document.getElementById('profileCourse').value;
+                // Email is LOCKED - cannot be changed! So we don't update it here.
+                // Year level is already updated via the popup
                 updateUserInfo();
-                alert('Profile updated successfully!');
+                showToast('Profile updated successfully! (Email is locked and cannot be changed)', 3000);
+            });
+            
+            document.querySelectorAll('.selection-card[data-difficulty]').forEach(card => {
+                card.addEventListener('click', function() {
+                    startQuizWithDifficulty(this.dataset.difficulty);
+                });
             });
         }
-        // ────────────────────────────────────────────────
-// ADD THESE THREE FUNCTIONS (copy-paste exactly)
-
-function openDifficultyModal() {
-    if (!quizState.selectedWeek) {
-        alert("Please select a week first.");
-        return;
-    }
-
-    // Show week number in modal
-    const weekSpan = document.getElementById('diffModalWeek');
-    if (weekSpan) {
-        weekSpan.textContent = quizState.selectedWeek;
-    }
-
-    // Show the modal
-    const modal = document.getElementById('difficultyModal');
-    if (modal) {
-        modal.style.display = 'flex';
-    } else {
-        console.error("Difficulty modal not found in HTML!");
-    }
-}
-
-function closeDifficultyModal() {
-    const modal = document.getElementById('difficultyModal');
-    if (modal) {
-        modal.style.display = 'none';
-    }
-}
-
-function startQuizWithDifficulty(difficulty) {
-    quizState.selectedDifficulty = difficulty;
-    closeDifficultyModal();
-    startQuiz();   // This should now run your existing startQuiz() logic
-
-    // Review Answers button – go back to quiz to see answers
-document.getElementById('reviewQuizBtn')?.addEventListener('click', function() {
-    document.getElementById('quizResultModal').style.display = 'none';  // hide result popup
-    
-    // Go back to the quiz page, start from question 1
-    quizState.currentQuestionIndex = 0;
-    showPage('activeQuizPage');
-    loadQuizQuestion();  // reload first question (answers are still saved)
-    
-    // Optional: change the submit button back to "Next" since we're reviewing
-    // (you can add a message like "Review Mode" if you want)
-});
-
-// Back to Week Selection button
-document.getElementById('backToWeekBtn')?.addEventListener('click', function() {
-    document.getElementById('quizResultModal').style.display = 'none';  // hide result
-    
-    // Reset quiz state (optional – so new quiz starts fresh)
-    quizState.currentQuestions = [];
-    quizState.currentQuestionIndex = 0;
-    quizState.userAnswers = [];
-    
-    // Go back to week selection page
-    showPage('quizSelectWeekPage');
-});
-}
-
-// ────────────────────────────────────────────────
     </script>
 </body>
 </html>
