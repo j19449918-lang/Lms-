@@ -22,6 +22,8 @@
             --success: #449342;
             --warning: #f39c12;
             --shadow: 0 4px 12px rgba(2, 53, 60, 0.15);
+            --sidebar-width: 250px;
+            --sidebar-collapsed: 70px;
         }
 
         body {
@@ -177,16 +179,88 @@
             min-height: 100vh;
         }
 
+        /* ===== COLLAPSIBLE SIDEBAR STYLES ===== */
         .sidebar {
-            width: 250px;
+            width: var(--sidebar-width);
             background-color: var(--primary);
             color: white;
             padding: 25px 0;
             position: fixed;
             height: 100vh;
             overflow-y: auto;
+            overflow-x: hidden;
             z-index: 100;
-            transition: transform 0.3s ease;
+            transition: width 0.3s ease;
+        }
+
+        /* Collapsed sidebar state */
+        .sidebar.collapsed {
+            width: var(--sidebar-collapsed);
+        }
+
+        /* Hide text when collapsed */
+        .sidebar.collapsed .sidebar-menu a span {
+            display: none;
+        }
+
+        .sidebar.collapsed .sidebar-menu a i {
+            margin-right: 0;
+        }
+
+        .sidebar.collapsed .sidebar-menu a {
+            justify-content: center;
+            padding: 14px 0;
+        }
+
+        .sidebar.collapsed .dashboard-logo h2,
+        .sidebar.collapsed .dashboard-logo p {
+            display: none;
+        }
+
+        .sidebar.collapsed .dashboard-logo {
+            padding: 0 0 25px 0;
+        }
+
+        /* Toggle button container */
+        .sidebar-toggle-container {
+            display: flex;
+            justify-content: flex-end;
+            padding: 0 20px 20px 20px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-toggle-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .sidebar-toggle-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* Main content adjustment */
+        .main-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            padding: 20px;
+            background-color: #f8fefd;
+            transition: margin-left 0.3s ease;
+        }
+
+        /* When sidebar is collapsed, main content expands */
+        .sidebar.collapsed ~ .main-content {
+            margin-left: var(--sidebar-collapsed);
         }
 
         .dashboard-logo {
@@ -194,6 +268,7 @@
             text-align: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 25px;
+            transition: all 0.3s;
         }
 
         .dashboard-logo h2 {
@@ -225,6 +300,7 @@
             font-size: 16px;
             transition: all 0.3s;
             cursor: pointer;
+            white-space: nowrap;
         }
 
         .sidebar-menu a:hover, .sidebar-menu a.active {
@@ -236,13 +312,6 @@
         .sidebar-menu a i {
             width: 20px;
             text-align: center;
-        }
-
-        .main-content {
-            flex: 1;
-            margin-left: 250px;
-            padding: 20px;
-            background-color: #f8fefd;
         }
 
         .top-nav {
@@ -1311,6 +1380,16 @@
             .dashboard-content {
                 grid-template-columns: 1fr;
             }
+            
+            /* For mobile, keep collapsed state different */
+            .sidebar.collapsed {
+                transform: translateX(-100%);
+                width: 280px;
+            }
+            
+            .sidebar.collapsed.active {
+                transform: translateX(0);
+            }
         }
 
         @media (max-width: 768px) {
@@ -1368,17 +1447,24 @@
 
     <!-- Main Dashboard -->
     <div id="dashboard" class="dashboard-container hidden">
-        <div class="sidebar">
+        <div class="sidebar" id="mainSidebar">
+            <!-- THREE LINE TOGGLE BUTTON -->
+            <div class="sidebar-toggle-container">
+                <button class="sidebar-toggle-btn" id="toggleSidebarBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
             <div class="dashboard-logo">
                 <h2>BESTLINK COLLEGE</h2>
                 <p>Learning System</p>
             </div>
             <ul class="sidebar-menu">
-                <li><a data-page="home" class="active"><i class="fas fa-home"></i> Home</a></li>
-                <li><a data-page="subjects"><i class="fas fa-book"></i> Subjects</a></li>
-                <li><a data-page="quizSelectSubject"><i class="fas fa-question-circle"></i> Quizzes</a></li>
-                <li><a data-page="offline"><i class="fas fa-laptop"></i> Offline Learning</a></li>
-                <li><a data-page="summary"><i class="fas fa-file-alt"></i> Lesson Summaries</a></li>
+                <li><a data-page="home" class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                <li><a data-page="subjects"><i class="fas fa-book"></i> <span>Subjects</span></a></li>
+                <li><a data-page="quizSelectSubject"><i class="fas fa-question-circle"></i> <span>Quizzes</span></a></li>
+                <li><a data-page="offline"><i class="fas fa-laptop"></i> <span>Offline Learning</span></a></li>
+                <li><a data-page="summary"><i class="fas fa-file-alt"></i> <span>Lesson Summaries</span></a></li>
             </ul>
         </div>
 
@@ -1594,7 +1680,7 @@
                 </div>
             </div>
 
-            <!-- Profile Page - UPDATED with clickable year level and locked email -->
+            <!-- Profile Page -->
             <div id="profilePage" class="page-content hidden">
                 <button class="back-button" onclick="showPage('homePage')">← Back</button>
                 <div class="profile-container">
@@ -1891,10 +1977,37 @@
             course: "BS Information Technology"
         };
 
+        // ==================== COLLAPSIBLE SIDEBAR FUNCTION ====================
+        
+        function initCollapsibleSidebar() {
+            const sidebar = document.getElementById('mainSidebar');
+            const toggleBtn = document.getElementById('toggleSidebarBtn');
+            
+            if (!sidebar || !toggleBtn) return;
+            
+            // Check local storage for saved state
+            const savedState = localStorage.getItem('sidebarCollapsed');
+            if (savedState === 'true') {
+                sidebar.classList.add('collapsed');
+            }
+            
+            // Toggle sidebar on button click
+            toggleBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                sidebar.classList.toggle('collapsed');
+                
+                // Save state to local storage
+                const isCollapsed = sidebar.classList.contains('collapsed');
+                localStorage.setItem('sidebarCollapsed', isCollapsed);
+            });
+        }
+
         // ==================== INITIALIZATION ====================
         
         document.addEventListener('DOMContentLoaded', function() {
             initApp();
+            initCollapsibleSidebar();
         });
 
         function initApp() {
@@ -1944,7 +2057,8 @@
                 option.addEventListener('click', function() {
                     const selectedYear = this.dataset.year;
                     currentUser.yearLevel = selectedYear;
-                    document.getElementById('currentYearLevel').textContent = selectedYear;
+                    const yearSpan = document.getElementById('currentYearLevel');
+                    if (yearSpan) yearSpan.textContent = selectedYear;
                     yearModal.classList.remove('active');
                     showToast(`Year level set to ${selectedYear}`, 1500);
                 });
@@ -1952,7 +2066,6 @@
         }
         
         function showToast(message, duration = 2000) {
-            // Create temporary toast element
             const toast = document.createElement('div');
             toast.textContent = message;
             toast.style.cssText = `
@@ -2023,7 +2136,6 @@
         function createSubjectCard(subject) {
             const card = document.createElement('div');
             card.className = 'subject-card';
-            const bgImage = SUBJECT_BG[subject] || 'https://images.unsplash.com/photo-1456513080510-34499c4369c6';
             const color = SUBJECT_COLORS[subject] || '#2EAF7D';
             
             card.innerHTML = `
@@ -2133,7 +2245,9 @@
                     tabBtns.forEach(b => b.classList.remove('active'));
                     document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
                     this.classList.add('active');
-                    document.getElementById(this.dataset.tab + 'Tab').classList.add('active');
+                    const tabId = this.dataset.tab + 'Tab';
+                    const tabElement = document.getElementById(tabId);
+                    if (tabElement) tabElement.classList.add('active');
                 });
             });
         }
@@ -2206,21 +2320,33 @@
                 const weekNumber = weekCard.dataset.week;
                 quizState.selectedWeek = weekNumber;
                 
-                document.getElementById('selectedWeekDisplay').textContent = `Week ${weekNumber}`;
-                document.getElementById('selectedWeekNumber').textContent = weekNumber;
-                document.getElementById('startQuizWeekDisplay').textContent = weekNumber;
+                const selectedWeekDisplay = document.getElementById('selectedWeekDisplay');
+                const selectedWeekNumber = document.getElementById('selectedWeekNumber');
+                const startQuizWeekDisplay = document.getElementById('startQuizWeekDisplay');
+                const weekProgressFill = document.getElementById('weekProgressFill');
+                const weekProgressSpan = document.querySelector('.week-progress span:last-child');
+                const selectedWeekInfo = document.getElementById('selectedWeekInfo');
+                const difficultyWeekNumber = document.getElementById('difficultyWeekNumber');
+                const startBtn = document.getElementById('startQuizBtn');
+                const startQuizHint = document.getElementById('startQuizHint');
+                const difficultySection = document.getElementById('difficultySection');
+                
+                if (selectedWeekDisplay) selectedWeekDisplay.textContent = `Week ${weekNumber}`;
+                if (selectedWeekNumber) selectedWeekNumber.textContent = weekNumber;
+                if (startQuizWeekDisplay) startQuizWeekDisplay.textContent = weekNumber;
                 
                 const progressPercentage = (weekNumber / 17) * 100;
-                document.getElementById('weekProgressFill').style.width = `${progressPercentage}%`;
-                document.querySelector('.week-progress span:last-child').textContent = `${weekNumber}/17 weeks`;
-                document.getElementById('selectedWeekInfo').classList.add('active');
-                document.getElementById('difficultyWeekNumber').textContent = weekNumber;
+                if (weekProgressFill) weekProgressFill.style.width = `${progressPercentage}%`;
+                if (weekProgressSpan) weekProgressSpan.textContent = `${weekNumber}/17 weeks`;
+                if (selectedWeekInfo) selectedWeekInfo.classList.add('active');
+                if (difficultyWeekNumber) difficultyWeekNumber.textContent = weekNumber;
                 
-                const startBtn = document.getElementById('startQuizBtn');
-                startBtn.textContent = `Start Week ${weekNumber} Quiz`;
-                startBtn.disabled = false;
-                document.getElementById('startQuizHint').textContent = 'Select difficulty level to begin';
-                document.getElementById('difficultySection').classList.add('active');
+                if (startBtn) {
+                    startBtn.textContent = `Start Week ${weekNumber} Quiz`;
+                    startBtn.disabled = false;
+                }
+                if (startQuizHint) startQuizHint.textContent = 'Select difficulty level to begin';
+                if (difficultySection) difficultySection.classList.add('active');
             });
         }
 
@@ -2229,12 +2355,15 @@
                 alert("Please select a week first.");
                 return;
             }
-            document.getElementById('diffModalWeek').textContent = quizState.selectedWeek;
-            document.getElementById('difficultyModal').style.display = 'flex';
+            const diffModalWeek = document.getElementById('diffModalWeek');
+            if (diffModalWeek) diffModalWeek.textContent = quizState.selectedWeek;
+            const difficultyModal = document.getElementById('difficultyModal');
+            if (difficultyModal) difficultyModal.style.display = 'flex';
         }
 
         function closeDifficultyModal() {
-            document.getElementById('difficultyModal').style.display = 'none';
+            const difficultyModal = document.getElementById('difficultyModal');
+            if (difficultyModal) difficultyModal.style.display = 'none';
         }
 
         function startQuizWithDifficulty(difficulty) {
@@ -2308,8 +2437,10 @@
             
             setupQuizOptions();
             
-            document.getElementById('prevQuestionBtn')?.addEventListener('click', prevQuestion);
-            document.getElementById('nextQuestionBtn')?.addEventListener('click', nextQuestion);
+            const prevBtn = document.getElementById('prevQuestionBtn');
+            const nextBtn = document.getElementById('nextQuestionBtn');
+            if (prevBtn) prevBtn.addEventListener('click', prevQuestion);
+            if (nextBtn) nextBtn.addEventListener('click', nextQuestion);
         }
 
         function setupQuizOptions() {
@@ -2353,24 +2484,35 @@
             const totalQuestions = quizState.currentQuestions.length;
             const percentage = Math.round((correctCount / totalQuestions) * 100);
 
-            document.getElementById('resultSubject').textContent = quizState.selectedSubject.name;
-            document.getElementById('resultWeek').textContent = `Week ${quizState.selectedWeek}`;
-            document.getElementById('resultDifficulty').textContent = quizState.selectedDifficulty.charAt(0).toUpperCase() + quizState.selectedDifficulty.slice(1);
-            document.getElementById('resultTime').textContent = formatTime(quizState.timeLeft);
-            document.getElementById('resultCorrect').textContent = correctCount;
-            document.getElementById('resultTotal').textContent = totalQuestions;
-            document.getElementById('resultPercentage').textContent = `${percentage}%`;
-            document.getElementById('quizScore').textContent = `${correctCount}/${totalQuestions}`;
+            const resultSubject = document.getElementById('resultSubject');
+            const resultWeek = document.getElementById('resultWeek');
+            const resultDifficulty = document.getElementById('resultDifficulty');
+            const resultTime = document.getElementById('resultTime');
+            const resultCorrect = document.getElementById('resultCorrect');
+            const resultTotal = document.getElementById('resultTotal');
+            const resultPercentage = document.getElementById('resultPercentage');
+            const quizScore = document.getElementById('quizScore');
+            const quizResultTitle = document.getElementById('quizResultTitle');
+            
+            if (resultSubject) resultSubject.textContent = quizState.selectedSubject.name;
+            if (resultWeek) resultWeek.textContent = `Week ${quizState.selectedWeek}`;
+            if (resultDifficulty) resultDifficulty.textContent = quizState.selectedDifficulty.charAt(0).toUpperCase() + quizState.selectedDifficulty.slice(1);
+            if (resultTime) resultTime.textContent = formatTime(quizState.timeLeft);
+            if (resultCorrect) resultCorrect.textContent = correctCount;
+            if (resultTotal) resultTotal.textContent = totalQuestions;
+            if (resultPercentage) resultPercentage.textContent = `${percentage}%`;
+            if (quizScore) quizScore.textContent = `${correctCount}/${totalQuestions}`;
 
             let title = '';
             if (percentage >= 90) title = 'Excellent!';
             else if (percentage >= 70) title = 'Good Job!';
             else if (percentage >= 50) title = 'Fair Effort!';
             else title = 'Keep Practicing!';
-            document.getElementById('quizResultTitle').textContent = title;
+            if (quizResultTitle) quizResultTitle.textContent = title;
 
-            document.getElementById('quizResultModal').style.display = 'flex';
-            clearInterval(quizState.timer);
+            const quizResultModal = document.getElementById('quizResultModal');
+            if (quizResultModal) quizResultModal.style.display = 'flex';
+            if (quizState.timer) clearInterval(quizState.timer);
         }
 
         function startQuizTimer() {
@@ -2448,21 +2590,17 @@
             const avatarElements = document.querySelectorAll('#userAvatar, #profileAvatar');
             avatarElements.forEach(el => { if (el) el.src = currentUser.avatar; });
             
-            // Update profile email display (locked)
             const profileEmailDisplay = document.getElementById('profileEmailDisplay');
             const lockedEmailField = document.getElementById('lockedEmailField');
             if (profileEmailDisplay) profileEmailDisplay.textContent = currentUser.email;
             if (lockedEmailField) lockedEmailField.textContent = currentUser.email;
             
-            // Update year level display
             const currentYearLevelSpan = document.getElementById('currentYearLevel');
             if (currentYearLevelSpan) currentYearLevelSpan.textContent = currentUser.yearLevel;
             
-            // Update course select
             const courseSelect = document.getElementById('profileCourse');
             if (courseSelect) courseSelect.value = currentUser.course;
             
-            // Update full name input
             const fullNameInput = document.getElementById('profileFullName');
             if (fullNameInput) fullNameInput.value = currentUser.name;
         }
@@ -2484,9 +2622,14 @@
                 });
             });
             
-            document.getElementById('profileBtn')?.addEventListener('click', () => showPage('profilePage'));
-            document.getElementById('userProfileBtn')?.addEventListener('click', () => showPage('profilePage'));
-            document.querySelector('.menu-toggle')?.addEventListener('click', () => document.querySelector('.sidebar').classList.toggle('active'));
+            const profileBtn = document.getElementById('profileBtn');
+            const userProfileBtn = document.getElementById('userProfileBtn');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            
+            if (profileBtn) profileBtn.addEventListener('click', () => showPage('profilePage'));
+            if (userProfileBtn) userProfileBtn.addEventListener('click', () => showPage('profilePage'));
+            if (menuToggle && sidebar) menuToggle.addEventListener('click', () => sidebar.classList.toggle('active'));
         }
 
         function showPage(pageId) {
@@ -2496,80 +2639,122 @@
             if (pageId === 'summaryPage') loadSummaries();
         }
 
-        // ==================== AUTH FUNCTIONS ====================
+        // ==================== AUTH FUNCS ====================
         
         function setupAuth() {
-            document.getElementById('loginForm')?.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const loginEmail = document.getElementById('loginEmail').value;
-                if (loginEmail) {
-                    // Set the email from login - this becomes LOCKED and cannot be changed
-                    currentUser.email = loginEmail;
-                    currentUser.name = loginEmail.split('@')[0] || "Student";
-                    currentUser.name = currentUser.name.charAt(0).toUpperCase() + currentUser.name.slice(1);
-                }
-                updateUserInfo();
-                document.getElementById('loginPage').classList.add('hidden');
-                document.getElementById('dashboard').classList.remove('hidden');
-                showToast(`Welcome ${currentUser.name}! Your email is now locked.`, 3000);
-            });
+            const loginForm = document.getElementById('loginForm');
+            if (loginForm) {
+                loginForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const loginEmail = document.getElementById('loginEmail');
+                    if (loginEmail && loginEmail.value) {
+                        currentUser.email = loginEmail.value;
+                        currentUser.name = loginEmail.value.split('@')[0] || "Student";
+                        currentUser.name = currentUser.name.charAt(0).toUpperCase() + currentUser.name.slice(1);
+                    }
+                    updateUserInfo();
+                    const loginPage = document.getElementById('loginPage');
+                    const dashboard = document.getElementById('dashboard');
+                    if (loginPage) loginPage.classList.add('hidden');
+                    if (dashboard) dashboard.classList.remove('hidden');
+                    showToast(`Welcome ${currentUser.name}! Your email is now locked.`, 3000);
+                });
+            }
         }
 
-        // ==================== EVENT LISTENERS ====================
+        // ==================== lISTENERS ====================
         
         function setupEventListeners() {
-            document.getElementById('startQuizBtn')?.addEventListener('click', openDifficultyModal);
+            const startQuizBtn = document.getElementById('startQuizBtn');
+            if (startQuizBtn) startQuizBtn.addEventListener('click', openDifficultyModal);
             
-            document.getElementById('reviewQuizBtn')?.addEventListener('click', function() {
-                document.getElementById('quizResultModal').style.display = 'none';
-                quizState.currentQuestionIndex = 0;
-                showPage('activeQuizPage');
-                loadQuizQuestion();
-            });
+            const reviewQuizBtn = document.getElementById('reviewQuizBtn');
+            if (reviewQuizBtn) {
+                reviewQuizBtn.addEventListener('click', function() {
+                    const quizResultModal = document.getElementById('quizResultModal');
+                    if (quizResultModal) quizResultModal.style.display = 'none';
+                    quizState.currentQuestionIndex = 0;
+                    showPage('activeQuizPage');
+                    loadQuizQuestion();
+                });
+            }
             
-            document.getElementById('backToWeekBtn')?.addEventListener('click', function() {
-                document.getElementById('quizResultModal').style.display = 'none';
-                quizState.currentQuestions = [];
-                showPage('quizSelectWeekPage');
-            });
+            const backToWeekBtn = document.getElementById('backToWeekBtn');
+            if (backToWeekBtn) {
+                backToWeekBtn.addEventListener('click', function() {
+                    const quizResultModal = document.getElementById('quizResultModal');
+                    if (quizResultModal) quizResultModal.style.display = 'none';
+                    quizState.currentQuestions = [];
+                    showPage('quizSelectWeekPage');
+                });
+            }
             
-            document.querySelectorAll('.close-modal').forEach(btn => {
-                btn.addEventListener('click', function() { this.closest('.modal').style.display = 'none'; });
-            });
-            
-            document.getElementById('editAvatarBtn')?.addEventListener('click', () => document.getElementById('avatarModal').style.display = 'flex');
-            document.getElementById('uploadAvatarBtn')?.addEventListener('click', () => document.getElementById('avatarUpload').click());
-            document.getElementById('avatarUpload')?.addEventListener('change', function(e) {
-                if (this.files && this.files[0]) {
-                    const reader = new FileReader();
-                    reader.onload = (e) => document.getElementById('avatarPreview').innerHTML = `<img src="${e.target.result}" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">`;
-                    reader.readAsDataURL(this.files[0]);
-                }
-            });
-            document.getElementById('saveAvatarBtn')?.addEventListener('click', function() {
-                const preview = document.querySelector('#avatarPreview img');
-                if (preview) {
-                    currentUser.avatar = preview.src;
-                    updateUserInfo();
-                }
-                document.getElementById('avatarModal').style.display = 'none';
-            });
-            
-            document.getElementById('saveProfileBtn')?.addEventListener('click', function() {
-                currentUser.name = document.getElementById('profileFullName').value;
-                currentUser.course = document.getElementById('profileCourse').value;
-                // Email is LOCKED - cannot be changed! So we don't update it here.
-                // Year level is already updated via the popup
-                updateUserInfo();
-                showToast('Profile updated successfully! (Email is locked and cannot be changed)', 3000);
-            });
-            
-            document.querySelectorAll('.selection-card[data-difficulty]').forEach(card => {
-                card.addEventListener('click', function() {
-                    startQuizWithDifficulty(this.dataset.difficulty);
+            const closeModals = document.querySelectorAll('.close-modal');
+            closeModals.forEach(btn => {
+                btn.addEventListener('click', function() { 
+                    const modal = this.closest('.modal');
+                    if (modal) modal.style.display = 'none';
                 });
             });
-        }
+            
+            const editAvatarBtn = document.getElementById('editAvatarBtn');
+            if (editAvatarBtn) editAvatarBtn.addEventListener('click', () => {
+                const avatarModal = document.getElementById('avatarModal');
+                if (avatarModal) avatarModal.style.display = 'flex';
+            });
+            
+            const uploadAvatarBtn = document.getElementById('uploadAvatarBtn');
+            if (uploadAvatarBtn) uploadAvatarBtn.addEventListener('click', () => {
+                const avatarUpload = document.getElementById('avatarUpload');
+                if (avatarUpload) avatarUpload.click();
+            });
+            
+            const avatarUpload = document.getElementById('avatarUpload');
+            if (avatarUpload) {
+                avatarUpload.addEventListener('change', function(e) {
+                    if (this.files && this.files[0]) {
+                        const reader = new FileReader();
+                        const avatarPreview = document.getElementById('avatarPreview');
+                        reader.onload = (e) => {
+                            if (avatarPreview) avatarPreview.innerHTML = `<img src="${e.target.result}" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">`;
+                        };
+                        reader.readAsDataURL(this.files[0]);
+                    }
+                });
+            }
+            
+            const saveAvatarBtn = document.getElementById('saveAvatarBtn');
+            if (saveAvatarBtn) {
+                saveAvatarBtn.addEventListener('click', function() {
+                    const preview = document.querySelector('#avatarPreview img');
+                    if (preview) {
+                        currentUser.avatar = preview.src;
+                        updateUserInfo();
+                    }
+                    const avatarModal = document.getElementById('avatarModal');
+                    if (avatarModal) avatarModal.style.display = 'none';
+                });
+            }
+            
+            const saveProfileBtn = document.getElementById('saveProfileBtn');
+            if (saveProfileBtn) {
+                saveProfileBtn.addEventListener('click', function() {
+                    const profileFullName = document.getElementById('profileFullName');
+                    const profileCourse = document.getElementById('profileCourse');
+                    if (profileFullName) currentUser.name = profileFullName.value;
+                    if (profileCourse) currentUser.course = profileCourse.value;
+updateUserInfo();
+                    showToast('Profile updated successfully! (Email is locked and cannot be changed)', 3000);
+    });
+}
+            
+            const difficultyCards = document.querySelectorAll('.selection-card[data-difficulty]');
+            difficultyCards.forEach(card => {
+card.addEventListener('click', function() {
+startQuizWithDifficulty(this.dataset.difficulty);
+});
+});
+}
     </script>
 </body>
 </html>
